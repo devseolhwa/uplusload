@@ -55,7 +55,26 @@ footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 
 
 
+.mapWrap{position: relative;}
 
+.btnMyLocation {
+    position: absolute;
+    left: 10px;
+    bottom: 30px;
+    width: 42px;
+    height: 42px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-image: url(../images/icon_myLocation.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-indent: -9999px;
+    white-space: nowrap;
+}
 .shopSlideWrap{padding: 25px 16px 40px;background-size: cover;background-position: center;background-repeat: no-repeat;box-sizing: border-box;}
 .shopSlideWrap.shop10oclock{background-image: url(../images/bg_shop10oclock.jpg);}
 .shopName{font-size: 28px;color: #FFFFFF;font-weight: 700;line-height: 32px;text-align: center;letter-spacing: -0.6px;}
@@ -104,7 +123,7 @@ footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 .shopPin {position: relative;bottom: 65px;border-radius: 10px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);}
 .shopPin:after {content:"";position: absolute;left: 50%;bottom: -12px;width: 23px;height: 12px;margin-left: -12px;background: url(../images/icon_pinAfter.png)}
 .shopPin a{display: block;overflow: hidden;background: #FF0097 url(../images/icon_arrow_white.svg) no-repeat right 15px center;border-radius: 10px;text-align: center;}
-.shopPin .name{display: block;margin-right: 38px;padding: 11px 15px;background: #fff;font-size: 13px;color: #333;font-weight: 700;letter-spacing: -0.6px;}
+.shopPin .name{display: block;margin-right: 38px;padding: 11px 15px;background: #fff;font-size: 13px;color: #333;line-height: 16px;font-weight: 700;letter-spacing: -0.6px;}
 
 
 @media screen and (max-width: 820px){
