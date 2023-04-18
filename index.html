@@ -33,7 +33,7 @@
                 <div class="gnbInner">
                     <div class="gnbTop">
                         <a href="/" title="메인페이지로" class="gnbLogo">
-                            <img src="assets/images/logo.svg" alt="U+로드">
+                            <img src="assets/images/logo.png" alt="U+로드">
                         </a>
                         <ul class="snsGroup">
                             <li><a href="#" class="facebook">페이스북</a></li>
@@ -144,7 +144,7 @@
                         function gps_tracking(){
                             if (gps_use) {
                                 map.panTo(new kakao.maps.LatLng(gps_lat,gps_lng));
-                                var gps_content = '<div class="myPosition"><img draggable="false" unselectable="on" src="assets/images/myPositionPin.svg" alt=""></div>';
+                                var gps_content = '<div class="myPosition"><img unselectable="on" src="assets/images/myPositionPin.svg" alt=""></div>';
                                 var currentOverlay = new kakao.maps.CustomOverlay({
                                     position: new kakao.maps.LatLng(gps_lat,gps_lng),
                                     content: gps_content,
