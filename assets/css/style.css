@@ -57,7 +57,7 @@ footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 
 .mapWrap{position: relative;}
 .btnMyPosition{position: absolute;left: 10px;bottom: 30px;width: 42px;height: 42px;background: #FFFFFF;border: 1px solid #E0E0E0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);border-radius: 5px;background-image: url(../images/icon_myLocation.svg);background-position: center;background-repeat: no-repeat;box-sizing: border-box;overflow: hidden;text-indent: -9999px;white-space: nowrap;z-index: 2;}
-.myPosition{}
+.myPosition{-webkit-animation: myPositionOn 2s infinite;-moz-animation: myPositionOn 2s infinite;-ms-animation: myPositionOn 2s infinite;-o-animation: myPositionOn 2s infinite;animation: myPositionOn 2.2s infinite;}
 .myPosition img{max-width: inherit;}
 .shopSlideWrap{padding: 25px 16px 40px;background-size: cover;background-position: center;background-repeat: no-repeat;box-sizing: border-box;}
 .shopSlideWrap.shop10oclock{background-image: url(../images/bg_shop10oclock.jpg);}
@@ -80,7 +80,7 @@ footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 .shopInfo li{flex: 1;display: flex;justify-content: center;flex-direction: column;flex-wrap: wrap;margin: 9px 0;text-align: center;}
 .shopInfo li strong{margin-top: 9px;font-size: 15px;color: #fff;font-weight: 700;line-height: 26px;letter-spacing: -0.6px;}
 .shopInfo li p{margin-top: 4px;font-size: 13px;color: #fff;font-weight: 400;line-height: 20px;letter-spacing: -0.6px;word-break: keep-all;}
-.scrollDown{position: relative;margin-top: 30px; text-align: center;-webkit-animation: scrollDown 2.2s infinite;-moz-animation: scrollDown 2.2s infinite;-ms-animation: scrollDown 2.2s infinite;-o-animation: scrollDown 2.2s infinite;animation: scrollDown 2.2s infinite;}
+.scrollDown{position: relative;margin-top: 30px;text-align: center;-webkit-animation: scrollDown 2.2s infinite;-moz-animation: scrollDown 2.2s infinite;-ms-animation: scrollDown 2.2s infinite;-o-animation: scrollDown 2.2s infinite;animation: scrollDown 2.2s infinite;}
 .scrollDown p {margin-bottom: 6px;font-size: 13px;color: #fff;font-weight: 700;line-height: 26px;letter-spacing: -0.8px;-webkit-transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);-webkit-transition-delay: .4s;transition-delay: .4s;}
 .scrollDown i {position: relative;display: inline-block;width: 18px;height: 27px;border: 1px solid #fff;border-radius: 15px;box-sizing: border-box;}
 .scrollDown i:after {content: "";position: absolute;top: 5px;left: 50%;transform: translateX(-50%);width: 1px;height: 6px;border-radius: 2px;background: #fff;-webkit-animation: scrollDownIcon 2s infinite;-moz-animation: scrollDownIcon 2s infinite;-ms-animation: scrollDownIcon 2s infinite;-o-animation: scrollDownIcon 2s infinite;animation: scrollDownIcon 2s infinite;}
@@ -164,4 +164,25 @@ footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 @keyframes scrollDownIcon {
     0%{top: 5px;}
 	100% {top: 15px;}
+}
+
+@-webkit-keyframes myPositionOn {
+    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097; }
+    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 10px rgba(255, 0, 151, 0);}
+}
+@-moz-keyframes myPositionOn {
+    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097; }
+    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 10px rgba(255, 0, 151, 0);}
+}
+@-ms-keyframes myPositionOn {
+    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097; }
+    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 10px rgba(255, 0, 151, 0);}
+}
+@-o-keyframes myPositionOn {
+    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097; }
+    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 10px rgba(255, 0, 151, 0);}
+}
+@keyframes myPositionOn {
+    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097; }
+    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 10px rgba(255, 0, 151, 0);}
 }
