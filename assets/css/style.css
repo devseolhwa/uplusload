@@ -56,7 +56,9 @@ footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 
 
 .mapWrap{position: relative;}
-.btnMyLocation{position: absolute;left: 10px;bottom: 30px;width: 42px;height: 42px;background: #FFFFFF;border: 1px solid #E0E0E0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);border-radius: 5px;background-image: url(../images/icon_myLocation.svg);background-position: center;background-repeat: no-repeat;box-sizing: border-box;overflow: hidden;text-indent: -9999px;white-space: nowrap;z-index: 2;}
+.btnMyPosition{position: absolute;left: 10px;bottom: 30px;width: 42px;height: 42px;background: #FFFFFF;border: 1px solid #E0E0E0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);border-radius: 5px;background-image: url(../images/icon_myLocation.svg);background-position: center;background-repeat: no-repeat;box-sizing: border-box;overflow: hidden;text-indent: -9999px;white-space: nowrap;z-index: 2;}
+.myPosition{}
+.myPosition img{max-width: inherit;}
 .shopSlideWrap{padding: 25px 16px 40px;background-size: cover;background-position: center;background-repeat: no-repeat;box-sizing: border-box;}
 .shopSlideWrap.shop10oclock{background-image: url(../images/bg_shop10oclock.jpg);}
 .shopName{font-size: 28px;color: #FFFFFF;font-weight: 700;line-height: 32px;text-align: center;letter-spacing: -0.6px;}
