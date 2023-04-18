@@ -20,8 +20,8 @@
                 <div class="headerWrap">
                     <h1 class="logo">
                         <a href="/" title="메인페이지로">
-                            <img src="assets/images/logo.svg" alt="U+로드" class="off">
-                            <img src="assets/images/logo_fix.svg" alt="U+로드" class="on">
+                            <img src="assets/images/logo.png" alt="U+로드" class="off">
+                            <img src="assets/images/logo_fix.png" alt="U+로드" class="on">
                         </a>
                     </h1>
                     <button type="button" id="btnGnbOpen">메뉴열기</button>
@@ -33,7 +33,7 @@
                 <div class="gnbInner">
                     <div class="gnbTop">
                         <a href="/" title="메인페이지로" class="gnbLogo">
-                            <img src="assets/images/logo.svg" alt="U+로드">
+                            <img src="assets/images/logo.png" alt="U+로드">
                         </a>
                         <ul class="snsGroup">
                             <li><a href="#" class="facebook">페이스북</a></li>
@@ -54,53 +54,57 @@
             </div><!-- gnb end -->
 
             <div class="contents">
-                <div class="map">
-<div id="map" style="width:100%;height:350px;"></div>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d33f98f36ac24cf4e5878e94b8c8fad9"></script>
-<script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-  mapOption = { 
-        center: new kakao.maps.LatLng(37.54699, 127.09598), // 지도의 중심좌표
-        level: 4 // 지도의 확대 레벨
-    };
+                <div class="mapWrap">
+                    <button type="button" class="btnMyPosition" onclick="gps_tracking();">내위치</button>
+                    <div id="map" style="width: 100%;height: 290px;"></div>
+                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d33f98f36ac24cf4e5878e94b8c8fad9"></script>
+                    <script>
+                        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                            mapOption = { 
+                                center: new kakao.maps.LatLng(37.578862, 126.971312), // 지도의 중심좌표
+                                level: 2 // 지도의 확대 레벨
+                            };
+                        
+                        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                        
+                        var imageSrc = 'assets/images/icon_pin.svg';                // 마커이미지 주소
+                            imageSize = new kakao.maps.Size(26, 32);                // 마커이미지의 크기
+                            imageOption = {offset: new kakao.maps.Point(12, 50)};   // 마커의 좌표와 일치시킬 이미지 안에서의 좌표설정
+                            
+                        // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+                        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+                    
+                        var arr = new Array();
+                        // 상점이름, 좌표1, 좌표2, 링크주소
+                        arr[0] = ["10 o’ clock",37.578862,126.971312,"1438742395"];
+                        arr[1] = ["알로이막막",37.579039,126.970545,"1296391690"];
 
-var map = new kakao.maps.Map(mapContainer, mapOption);
-
-var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
-    imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
-    imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
-
-// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
-var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
-    markerPosition = new kakao.maps.LatLng(37.54699, 127.09598); // 마커가 표시될 위치입니다
-
-// 마커를 생성합니다
-var marker = new kakao.maps.Marker({
-  position: markerPosition,
-  image: markerImage // 마커이미지 설정 
-});
-
-// 마커가 지도 위에 표시되도록 설정합니다
-marker.setMap(map);  
-
-// 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-var content = '<div class="customoverlay">' +
-    '  <a href="https://map.kakao.com/link/map/11394059" target="_blank">' +
-    '    <span class="title">구의야구공원</span>' +
-    '  </a>' +
-    '</div>';
-
-// 커스텀 오버레이가 표시될 위치입니다 
-var position = new kakao.maps.LatLng(37.54699, 127.09598);  
-
-// 커스텀 오버레이를 생성합니다
-var customOverlay = new kakao.maps.CustomOverlay({
-    map: map,
-    position: position,
-    content: content,
-    yAnchor: 1 
-});
-</script>
+                        var markerTmp;      // 마커
+                        var customOverlay;  // 오버레이
+                        var contentStr;
+                        
+                        for (var i=0;i<arr.length;i++) {
+                            markerTmp = new daum.maps.Marker({
+                                position: new daum.maps.LatLng(arr[i][1],arr[i][2]),
+                                title: arr[i][0],
+                                image: markerImage,
+                                map:map
+                            });
+                        
+                            contentStr = "<div class='storePin'><a href='https://map.kakao.com/link/map/"+ arr[i][3] +"' target='_blank'><span class='name'>"+ arr[i][0] +"</span></a></div>";
+                        
+                            customOverlay = new kakao.maps.CustomOverlay({
+                                map: map,
+                                position: new daum.maps.LatLng(arr[i][1],arr[i][2]),
+                                content: contentStr,
+                                yAnchor: 1 
+                            });
+                        }
+                        
+                        // 지도에 확대 축소 컨트롤을 생성한다
+                        var zoomControl = new kakao.maps.ZoomControl();
+                        map.addControl(zoomControl, kakao.maps.ControlPosition.BOTTOMRIGHT);
+                    </script>
                 </div>
                 <!-- [전달사항] 매장별 bg가 다르기 때문에 .storeSlideWrap에 추가로 매장별 클래스명 부여 필요 -->
                 <div class="storeSlideWrap store10oclock">

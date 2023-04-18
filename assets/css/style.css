@@ -102,7 +102,6 @@ footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 .scrollLeft{display: flex;align-items: center;justify-content: flex-end;width: 200%;padding: 28px 0 43px;font-size: 70px;color: rgba(0, 0, 0, 0.1);font-weight: 700;line-height: 84px;text-align: center;letter-spacing: -0.6px;white-space: nowrap;}
 
 
-
 .storePin {position: relative;bottom: 65px;border-radius: 10px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);}
 .storePin:after {content:"";position: absolute;left: 50%;bottom: -12px;width: 23px;height: 12px;margin-left: -12px;background: url(../images/icon_pinAfter.png)}
 .storePin a{display: block;overflow: hidden;background: #FF0097 url(../images/icon_arrow_white.svg) no-repeat right 15px center;border-radius: 10px;text-align: center;}
@@ -119,8 +118,6 @@ footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 @media screen and (max-width: 375px){
     #gnb .gnbInner{width: calc(100% - 70px);}
 }
-
-
 
 /* scroll down */
 @-webkit-keyframes scrollDown {
