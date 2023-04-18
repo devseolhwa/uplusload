@@ -21,7 +21,7 @@
                     <h1 class="logo">
                         <a href="/" title="메인페이지로">
                             <img src="assets/images/logo.svg" alt="U+로드" class="off">
-                            <img src="assets/images/logo_fix.svg" alt="U+로드" class="on">
+                            <img src="assets/images/logo_fix.png" alt="U+로드" class="on">
                         </a>
                     </h1>
                     <button type="button" id="btnGnbOpen">메뉴열기</button>
@@ -61,19 +61,19 @@
                     <script>
                         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
                             mapOption = { 
-                                center: new kakao.maps.LatLng(35.8773582, 128.6042956), // 지도의 중심좌표
+                                center: new kakao.maps.LatLng(35.578862, 126.971312), // 지도의 중심좌표
                                 level: 3 // 지도의 확대 레벨
                             };
                         
                         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
                         
                         // 마커가 표시될 위치입니다 
-                        var markerPosition  = new kakao.maps.LatLng(35.8780671960342, 128.60320927213); 
+                        //var markerPosition  = new kakao.maps.LatLng(35.578862, 128.971312); 
                         
                         // 마커를 생성합니다
-                        var marker = new kakao.maps.Marker({
-                            position: markerPosition
-                        });
+                        //var marker = new kakao.maps.Marker({
+                        //    position: markerPosition
+                        //});
                         
                         // 마커가 지도 위에 표시되도록 설정합니다
                         //marker.setMap(map);
@@ -90,10 +90,9 @@
                     
                         var arr = new Array();
                         // 상점이름, 좌표1, 좌표2, 링크주소
-                        arr[0] = ["10 o’ clock",35.8780671960342,128.60320927213,"1980287267"];
-                        arr[1] = ["노상공영주차장",35.8794483127273,128.602329365994,"1438742395"];
-                        
-                        
+                        arr[0] = ["10 o’ clock",35.578862,126.971312,"1438742395"];
+                        arr[1] = ["알로이막막",37.579039,126.970545,"1296391690"];
+
                         var markerTmp;      // 마커
                         var customOverlay;  // 오버레이
                         var contentStr;
@@ -167,8 +166,8 @@
                                 });
                                 currentOverlay.setMap(map);
                             } else {
-                            alert("접근차단하신 경우 새로고침, 아닌 경우 잠시만 기다려주세요.");
-                            gps_check();
+                                alert("접근차단하신 경우 새로고침, 아닌 경우 잠시만 기다려주세요.");
+                                gps_check();
                             }
                         }
                     </script>
