@@ -36,7 +36,6 @@ header.fixed #btnGnbOpen{background-image: url(../images/icon_gnb_open_fix.png);
 
 footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 .footerTop{display: flex;align-items: center;justify-content: space-between;padding-bottom: 14px;border-bottom: 1px solid rgba(217, 217, 217, 0.2);box-sizing: border-box;}
-.footerTop .footerText{}
 .footerTop .footerText h2{font-size: 15px;color: #fff;font-weight: 700;line-height: 24px;letter-spacing: -0.6px;}
 .footerTop .footerText .address{font-size: 12px;color: #ABABAB;font-weight: 400;line-height: 20px;letter-spacing: -0.6px;}
 .footerTop .snsGroup{display: flex;align-items: center;}
@@ -57,7 +56,9 @@ footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 
 .mapWrap{position: relative;}
 .btnMyPosition{position: absolute;left: 10px;bottom: 30px;width: 42px;height: 42px;background: #FFFFFF;border: 1px solid #E0E0E0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);border-radius: 5px;background-image: url(../images/icon_myLocation.svg);background-position: center;background-repeat: no-repeat;box-sizing: border-box;overflow: hidden;text-indent: -9999px;white-space: nowrap;z-index: 2;}
-.myPosition{-webkit-animation: myPositionOn 2s infinite;-moz-animation: myPositionOn 2s infinite;-ms-animation: myPositionOn 2s infinite;-o-animation: myPositionOn 2s infinite;animation: myPositionOn 2.2s infinite;}
+.btnMyPosition:before{position: absolute;left: 10px;bottom: 30px;width: 42px;height: 42px;background: #FFFFFF;border: 1px solid #E0E0E0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);border-radius: 5px;background-image: url(../images/icon_myLocation.svg);background-position: center;background-repeat: no-repeat;box-sizing: border-box;overflow: hidden;text-indent: -9999px;white-space: nowrap;z-index: 2;}
+.myPosition{position: relative;}
+.myPosition:before{content: "";position: absolute;width: 10px;height: 10px;background-color: #fff;border-radius: 50%;bottom: 6px;left: 50%;margin-left: -5px;-webkit-animation: myPositionOn 2s infinite;-moz-animation: myPositionOn 2s infinite;-ms-animation: myPositionOn 2s infinite;-o-animation: myPositionOn 2s infinite;animation: myPositionOn 2.2s infinite;}
 .myPosition img{max-width: inherit;}
 .shopSlideWrap{padding: 25px 16px 40px;background-size: cover;background-position: center;background-repeat: no-repeat;box-sizing: border-box;}
 .shopSlideWrap.shop10oclock{background-image: url(../images/bg_shop10oclock.jpg);}
@@ -167,22 +168,22 @@ footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 }
 
 @-webkit-keyframes myPositionOn {
-    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097; }
-    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 10px rgba(255, 0, 151, 0);}
+    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
+    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 8px rgba(255, 0, 151, 0);box-shadow:0 0 0 8px rgba(255, 0, 151, 0);}
 }
 @-moz-keyframes myPositionOn {
-    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097; }
-    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 10px rgba(255, 0, 151, 0);}
+    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
+    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 8px rgba(255, 0, 151, 0);box-shadow:0 0 0 8px rgba(255, 0, 151, 0);}
 }
 @-ms-keyframes myPositionOn {
-    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097; }
-    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 10px rgba(255, 0, 151, 0);}
+    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
+    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 8px rgba(255, 0, 151, 0);box-shadow:0 0 0 8px rgba(255, 0, 151, 0);}
 }
 @-o-keyframes myPositionOn {
-    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097; }
-    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 10px rgba(255, 0, 151, 0);}
+    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
+    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 8px rgba(255, 0, 151, 0);box-shadow:0 0 0 8px rgba(255, 0, 151, 0);}
 }
 @keyframes myPositionOn {
-    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097; }
-    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 10px rgba(255, 0, 151, 0);}
+    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
+    to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 8px rgba(255, 0, 151, 0);box-shadow:0 0 0 8px rgba(255, 0, 151, 0);}
 }
