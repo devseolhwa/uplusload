@@ -1,10 +1,10 @@
 $(function(){
 
-    shopSlide(); // shop Slide
+    storeSlide(); // store Slide
     
-    // shop Slide
-    function shopSlide() {
-        $(".shopSlide").slick({
+    // store Slide
+    function storeSlide() {
+        $(".storeSlide").slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
