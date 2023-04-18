@@ -99,6 +99,14 @@ footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 .detailsType03 .detailsText{padding: 20px 16px 33px;font-size: 15px;color: #444444;font-weight: 400;line-height: 24px;letter-spacing: -0.6px;word-break: keep-all;}
 .scrollLeft{display: flex;align-items: center;justify-content: flex-end;width: 200%;padding: 28px 0 43px;font-size: 70px;color: rgba(0, 0, 0, 0.1);font-weight: 700;line-height: 84px;text-align: center;letter-spacing: -0.6px;white-space: nowrap;}
 
+
+
+.shopPin {position: relative;bottom: 85px;border-radius: 10px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);}
+.shopPin:after {content:"";position: absolute;left: 50%;bottom: -12px;width: 23px;height: 12px;margin-left: -12px;background: url(../images/icon_pinAfter.png)}
+.shopPin a{display: block;overflow: hidden;background: #FF0097 url(../images/icon_arrow_white.svg) no-repeat right 15px center;border-radius: 10px;text-align: center;}
+.shopPin .name{display: block;margin-right: 38px;padding: 11px 15px;background: #fff;font-size: 13px;color: #333;font-weight: 700;letter-spacing: -0.6px;}
+
+
 @media screen and (max-width: 820px){
     .mWrap{max-width: 100%;margin: 0;}
     header.fixed{max-width: 100%;}
