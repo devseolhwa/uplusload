@@ -11,8 +11,8 @@
 .myPosition{position: relative;width: 16px;height: 16px;}
 .myPosition:before{content: "";position: absolute;top: 50%;left: 50%;width: 16px;height: 16px;margin-left: -8px;margin-top: -8px;background-color: #fff;border-radius: 50%;-webkit-animation: myPositionOn 2s infinite;-moz-animation: myPositionOn 2s infinite;-ms-animation: myPositionOn 2s infinite;-o-animation: myPositionOn 2s infinite;animation: myPositionOn 2.2s infinite;}
 .myPosition img{max-width: inherit;vertical-align: 0;}
-.storePin {position: relative;bottom: 50px;border-radius: 10px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);}
-.storePin:after {content:"";position: absolute;left: 50%;bottom: -12px;width: 23px;height: 12px;margin-left: -12px;background: url(../images/icon_pinAfter.png)}
+.storePin{position: relative;bottom: 55px;border-radius: 10px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);}
+.storePin:after{content:"";position: absolute;left: 50%;bottom: -12px;width: 23px;height: 12px;margin-left: -12px;background: url(../images/icon_pinAfter.png)}
 .storePin a{display: block;overflow: hidden;background: #FF0097 url(../images/icon_arrow_white.svg) no-repeat right 15px center;border-radius: 10px;text-align: center;}
 .storePin .name{display: block;margin-right: 38px;padding: 11px 15px;background: #fff;font-size: 13px;color: #333;line-height: 16px;font-weight: 700;letter-spacing: -0.6px;}
 
