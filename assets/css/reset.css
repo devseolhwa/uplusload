@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* font */
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css");
 
 /* reset */
 *{font-family: "Pretendard", "Apple SD Gothic Neo", "돋움", "Dotum", Tahoma, Verdana, sans-serif;}
@@ -70,7 +70,6 @@ textarea::-webkit-input-placeholder, textarea::-moz-placeholder, textarea:-ms-in
 
 /* strong color */
 .strong_txt1{color: #FF0097 !important;}
-.strong_txt2{color: #F97B0A !important;}
 .basic_txt1 {color: #fff !important;}/* withe */
 .basic_txt2 {color: #000 !important;}/* black */
 .basic_txt3 {color: #222 !important;}/* gray */
