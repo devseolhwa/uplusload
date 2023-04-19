@@ -33,7 +33,7 @@ header.fixed .logo img.on{display: block;}
 header.fixed .logo img.off{display: none;}
 header.fixed #btnGnbOpen{background-image: url(../images/icon_gnb_open_fix.svg);}
 
-footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
+footer{position: relative;background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;z-index: 98;}
 .footerTop{display: flex;align-items: center;justify-content: space-between;padding-bottom: 14px;border-bottom: 1px solid rgba(217, 217, 217, 0.2);box-sizing: border-box;}
 .footerTop .footerText h2{font-size: 15px;color: #fff;font-weight: 700;line-height: 24px;letter-spacing: -0.6px;}
 .footerTop .footerText .address{font-size: 12px;color: #ABABAB;font-weight: 400;line-height: 20px;letter-spacing: -0.6px;}
