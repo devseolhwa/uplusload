@@ -75,7 +75,7 @@
                         var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
                     
                         var arr = new Array();
-                        // 상점이름, 좌표1, 좌표2, 링크주소
+                        // 상점이름, 위도, 경도, 링크주소
                         arr[0] = ["10 o’ clock",37.578862,126.971312,"1438742395"];
                         arr[1] = ["알로이막막",37.579039,126.970545,"1296391690"];
 
@@ -150,6 +150,7 @@
                                     content: gps_content,
                                     map: map
                                 });
+                                currentOverlay.setMap(null);
                                 currentOverlay.setMap(map);
                             } else {
                                 alert("접근차단하신 경우 새로고침, 아닌 경우 잠시만 기다려주세요.");
