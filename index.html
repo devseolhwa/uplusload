@@ -120,8 +120,6 @@
                             if (navigator.geolocation) {
                                 var options = {timeout:60000};
                                 navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
-                                LatLng.setMap(null);
-                                removeMarker();
                             } else {
                                 alert("GPS_추적이 불가합니다.");
                                 gps_use = false;
@@ -145,6 +143,8 @@
                             gps_use = false;
                         }
                         function gps_tracking(){
+                            LatLng.setMap(null);
+                                removeMarker();
                             if (gps_use) {
                                 map.panTo(new kakao.maps.LatLng(gps_lat,gps_lng));
                                 var gps_content = '<div class="myPosition"><img unselectable="on" src="assets/images/myPositionPin.svg" alt=""></div>';
