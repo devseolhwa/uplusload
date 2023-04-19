@@ -61,11 +61,11 @@
             <div id="contents">
                 <div class="mapTopFix">
                     <div class="mapWrap">
-                        <button type="button" class="btnMyPosition" onclick="gps_tracking();">내위치</button>
                         <div id="map" style="width: 100%;height: 290px;"></div>
-                        <div class="custom_zoomcontrol radius_border"> 
-                            <span onclick="zoomIn()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>  
-                            <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                        <button type="button" class="btnMyPosition" onclick="gps_tracking();">내위치</button>
+                        <div class="custom_zoomcontrol">
+                            <button type="button" onclick="zoomIn();"><img src="assets/images/icon_plus.svg" alt="확대"></button>
+                            <button type="button" onclick="zoomOut();"><img src="assets/images/icon_minus.svg" alt="축소"></button>
                         </div>
                         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d33f98f36ac24cf4e5878e94b8c8fad9"></script>
                         <script>
@@ -111,12 +111,10 @@
                                 });
                             }
                             
-                            // 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+                            // 지도 확대, 축소
                             function zoomIn() {
                                 map.setLevel(map.getLevel() - 1);
                             }
-
-                            // 지도 확대, 축소 컨트롤에서 축소 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
                             function zoomOut() {
                                 map.setLevel(map.getLevel() + 1);
                             }

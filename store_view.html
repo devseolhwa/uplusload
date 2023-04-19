@@ -60,8 +60,12 @@
 
             <div id="contents">
                 <div class="mapWrap">
-                    <button type="button" class="btnMyPosition" onclick="gps_tracking();">내위치</button>
                     <div id="map" style="width: 100%;height: 290px;"></div>
+                    <button type="button" class="btnMyPosition" onclick="gps_tracking();">내위치</button>
+                    <div class="custom_zoomcontrol">
+                        <button type="button" onclick="zoomIn();"><img src="assets/images/icon_plus.svg" alt="확대"></button>
+                        <button type="button" onclick="zoomOut();"><img src="assets/images/icon_minus.svg" alt="축소"></button>
+                    </div>
                     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d33f98f36ac24cf4e5878e94b8c8fad9"></script>
                     <script>
                         var mapContainer = document.getElementById("map"), // 지도를 표시할 div 
@@ -106,9 +110,13 @@
                             });
                         }
                         
-                        // 지도에 확대 축소 컨트롤을 생성한다
-                        var zoomControl = new kakao.maps.ZoomControl();
-                        map.addControl(zoomControl, kakao.maps.ControlPosition.BOTTOMRIGHT);
+                        // 지도 확대, 축소
+                        function zoomIn() {
+                            map.setLevel(map.getLevel() - 1);
+                        }
+                        function zoomOut() {
+                            map.setLevel(map.getLevel() + 1);
+                        }
 
                         // 내 위치 스크립트 시작
                         var gps_use = null; //gps의 사용가능 여부

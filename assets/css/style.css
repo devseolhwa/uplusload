@@ -13,13 +13,12 @@
 .storePin a{display: block;overflow: hidden;background: #FF0097 url(../images/icon_arrow_white.svg) no-repeat right 15px center;border-radius: 10px;text-align: center;}
 .storePin .name{display: block;margin-right: 38px;padding: 11px 15px;background: #fff;font-size: 13px;color: #333;line-height: 16px;font-weight: 700;letter-spacing: -0.6px;}
 
-.custom_zoomcontrol{position: absolute;bottom: 30px;right: 10px;z-index: 1;} 
-.custom_zoomcontrol button {width: 44px;height: 44px;background: #fff;border: 1px solid #E0E0E0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);border-radius: 5px;cursor: pointer;}     
-.custom_zoomcontrol span img {width:15px;height:15px;padding:12px 0;border:none;}             
-.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}          
+.custom_zoomcontrol{position: absolute;bottom: 30px;right: 10px;width: 44px;z-index: 1;} 
+.custom_zoomcontrol button{width: 44px;height: 44px;background: #fff;border: 1px solid #E0E0E0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);border-radius: 5px;cursor: pointer;}
+.custom_zoomcontrol button + button{margin-top: 5px;}
 
 @media screen and (max-width: 820px){
-
+    .mapTopFix .mapWrap{left: 0;max-width: 100%;}
 }
 @media screen and (max-width: 375px){
 
