@@ -1,10 +1,11 @@
 $(function(){
-
-    storeSlide(); // store Slide
-    
+    let storeSlideCheck = $(".storeSlide");
+    if (storeSlideCheck.length) {
+        storeSlide(); // store Slide
+    }
     // store Slide
     function storeSlide() {
-        $(".storeSlide").slick({
+        storeSlideCheck.slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
