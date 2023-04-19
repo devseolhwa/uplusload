@@ -119,6 +119,7 @@
                             if (navigator.geolocation) {
                                 var options = {timeout:60000};
                                 navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+                                removeMarker();
                             } else {
                                 alert("GPS_추적이 불가합니다.");
                                 gps_use = false;
@@ -151,10 +152,19 @@
                                     map: map
                                 });
                                 currentOverlay.setMap(map);
+                                markers.push(currentOverlay);  // 배열에 생성된 마커를 추가합니다
+
+                                return currentOverlay;
                             } else {
                                 alert("접근차단하신 경우 새로고침, 아닌 경우 잠시만 기다려주세요.");
                                 gps_check();
                             }
+                        }
+                        function removeMarker() {
+                            for ( var i = 0; i < markers.length; i++ ) {
+                                markers[i].setMap(null);
+                            }   
+                            markers = [];
                         }
                     </script>
                 </div>
