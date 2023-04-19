@@ -1,11 +1,11 @@
 .storeSlideWrap{padding: 25px 16px 40px;background-size: cover;background-position: center;background-repeat: no-repeat;box-sizing: border-box;}
-.storeSlideWrap.store10oclock{background-image: url(../images/bg_store10oclock.jpg);}
-.storeName{font-size: 28px;color: #fff;font-weight: 700;line-height: 32px;text-align: center;letter-spacing: -0.6px;}
-.storeAddress{font-size: 15px;color: #fff;font-weight: 400;line-height: 18px;text-align: center;letter-spacing: -0.6px;opacity: 0.9;}
-.storeName + .storeAddress:before{content: "";display: block;width: 10px;height: 1px;margin: 7px auto 11px;background-color: #fff;}
+.storeSlideWrap.storetenoclock{background-image: url(../images/store/tenoclock/bg_store.jpg);}
+.storeSlideWrap .storeName{font-size: 28px;color: #fff;font-weight: 700;line-height: 32px;text-align: center;letter-spacing: -0.6px;}
+.storeSlideWrap .storeAddress{font-size: 15px;color: #fff;font-weight: 400;line-height: 18px;text-align: center;letter-spacing: -0.6px;opacity: 0.9;}
+.storeSlideWrap .storeName + .storeAddress:before{content: "";display: block;width: 10px;height: 1px;margin: 7px auto 11px;background-color: #fff;}
 .storeSlide{margin-bottom: 0 !important;margin-top: 24px;}
 .storeSlide .slick-list{border-radius: 10px;overflow: hidden;}
-.storeSlide .storeThumb img{width: 100%;margin: 0 auto;}
+.storeSlide .slideItem img{width: 100%;margin: 0 auto;}
 .storeSlide .slick-dots{position: inherit;bottom: inherit;line-height: 0;margin-top: 15px;}
 .storeSlide .slick-dots li{width: 5px;height: 5px;margin: 0;vertical-align: middle;}
 .storeSlide .slick-dots li + li{margin-left: 5px;}

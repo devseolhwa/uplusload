@@ -8,8 +8,9 @@ $(document).on("click", "#btnGnbOpen", function () {
 });
 
 // scroll
-const header = document.querySelector("header");
-const btnTop = document.querySelector("#btnTop");
+let header = document.querySelector("header"),
+    btnTop = document.querySelector("#btnTop"),
+    storeDetails = document.querySelectorAll(".storeDetails");
 
 window.addEventListener("scroll", () => {
     if (window.scrollY) {
@@ -22,25 +23,24 @@ window.addEventListener("scroll", () => {
 });
 window.addEventListener("load", function() {
     window.addEventListener("scroll", function() {
-    var wintop = window.pageYOffset || document.documentElement.scrollTop,
-        docheight = document.querySelector("body").offsetHeight,
-        winheight = window.innerHeight;
+        var wintop = window.pageYOffset || document.documentElement.scrollTop,
+            docheight = document.querySelector("body").offsetHeight,
+            winheight = window.innerHeight;
 
-    var totalScroll = (wintop / (docheight - winheight)) * 100;
-
-    document.querySelector(".bar").style.width = totalScroll + "%";
+        let totalScroll = (wintop / (docheight - winheight)) * 100;
+        if (storeDetails.length) {
+            document.querySelector(".bar").style.width = totalScroll + "%";
+        }
     });
+    // storeview 페이지에만 progress 삽입
+    if (storeDetails.length) {
+        let progressHtml = "<div class='progress'><div class='bar'></div></div>";
+        header.insertAdjacentHTML("beforeend", progressHtml);
+    }
 });
 
-// store view page progress
-let storeDetails = $(".storeDetails");
-if (storeDetails.length) {
-    var progress = "<div class='progress'><div class='bar'></div></div>";
-    $("header").append(progress);
-}
-
 // 상단으로
-const scrollToTop = () => {
+let scrollToTop = () => {
     $("html, body").animate({scrollTop:0}, 500);
 }
 $("#btnTop").click(() => {
