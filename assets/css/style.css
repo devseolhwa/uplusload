@@ -24,15 +24,15 @@ header{position: relative;z-index: 99;-webkit-transition: all 0.5s ease;transiti
 .gnbTop .snsGroup{display: flex;align-items: center;}
 .gnbTop .snsGroup li + li{margin-left: 10px;}
 .gnbTop .snsGroup a{display: block;width: 36px;height: 36px;background-repeat: no-repeat;overflow: hidden;text-indent: -9999px;white-space: nowrap;}
-.gnbTop .snsGroup .facebook{background-image: url(../images/icon_facebook.png);}
-.gnbTop .snsGroup .instagram{background-image: url(../images/icon_instagram.png);}
+.gnbTop .snsGroup .facebook{background-image: url(../images/icon_facebook.svg);}
+.gnbTop .snsGroup .instagram{background-image: url(../images/icon_instagram.svg);}
 #btnGnbClose {position: absolute;top: 14px;left: -56px;width: 42px;height: 42px;overflow: hidden;text-indent: -9999px;white-space: nowrap;background-image: url(../images/icon_gnb_close.png);background-position: center;background-repeat: no-repeat;}
 #gnb.active {opacity: 1;visibility: visible;-webkit-transition-delay: 0s;transition-delay: 0s;}
 #gnb.active .gnbInner{transform: translateX(0);-webkit-transform: translateX(0);transition-duration: 0.5s;-webkit-transition-duration: 0.5s;}
 header.fixed{position: fixed;top: 0;width: 100%;max-width: 390px;background: rgba(255, 0, 151, 0.6);backdrop-filter: blur(2px);}
 header.fixed .logo img.on{display: block;}
 header.fixed .logo img.off{display: none;}
-header.fixed #btnGnbOpen{background-image: url(../images/icon_gnb_open_fix.png);}
+header.fixed #btnGnbOpen{background-image: url(../images/icon_gnb_open_fix.svg);}
 
 footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 .footerTop{display: flex;align-items: center;justify-content: space-between;padding-bottom: 14px;border-bottom: 1px solid rgba(217, 217, 217, 0.2);box-sizing: border-box;}
@@ -41,8 +41,8 @@ footer{background: #2E2E2E;padding: 16px 16px 9px;box-sizing: border-box;}
 .footerTop .snsGroup{display: flex;align-items: center;}
 .footerTop .snsGroup li + li{margin-left: 10px;}
 .footerTop .snsGroup a{display: block;width: 36px;height: 36px;background-repeat: no-repeat;overflow: hidden;text-indent: -9999px;white-space: nowrap;}
-.footerTop .snsGroup .facebook{background-image: url(../images/icon_facebook.png);}
-.footerTop .snsGroup .instagram{background-image: url(../images/icon_instagram.png);}
+.footerTop .snsGroup .facebook{background-image: url(../images/icon_facebook.svg);}
+.footerTop .snsGroup .instagram{background-image: url(../images/icon_instagram.svg);}
 .footerInfo{padding: 14px 0;border-bottom: 1px solid rgba(217, 217, 217, 0.2);box-sizing: border-box;}
 .footerInfo li{font-size: 12px;color: #fff;font-weight: 400;line-height: 24px;letter-spacing: -0.6px;}
 .footerInfo li span{color: #ABABAB;}
