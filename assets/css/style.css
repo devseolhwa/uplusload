@@ -105,22 +105,22 @@
 }
 
 @-webkit-keyframes myPositionOn {
-    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
+    from {background-color: rgba(255, 0, 151, 0.3); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
     to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 8px rgba(255, 0, 151, 0);box-shadow:0 0 0 8px rgba(255, 0, 151, 0);}
 }
 @-moz-keyframes myPositionOn {
-    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
+    from {background-color: rgba(255, 0, 151, 0.3); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
     to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 8px rgba(255, 0, 151, 0);box-shadow:0 0 0 8px rgba(255, 0, 151, 0);}
 }
 @-ms-keyframes myPositionOn {
-    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
+    from {background-color: rgba(255, 0, 151, 0.3); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
     to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 8px rgba(255, 0, 151, 0);box-shadow:0 0 0 8px rgba(255, 0, 151, 0);}
 }
 @-o-keyframes myPositionOn {
-    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
+    from {background-color: rgba(255, 0, 151, 0.3); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
     to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 8px rgba(255, 0, 151, 0);box-shadow:0 0 0 8px rgba(255, 0, 151, 0);}
 }
 @keyframes myPositionOn {
-    from {background-color: rgba(255, 0, 151, 0.4); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
+    from {background-color: rgba(255, 0, 151, 0.3); -webkit-box-shadow: 0 0 0 0 #ff0097;box-shadow: 0 0 0 0 #ff0097;}
     to {background-color: rgba(255, 0, 151, 0.1); -webkit-box-shadow:0 0 0 8px rgba(255, 0, 151, 0);box-shadow:0 0 0 8px rgba(255, 0, 151, 0);}
 }
