@@ -51,7 +51,7 @@
 .detailsType03 .detailsTitle{padding: 30px 16px 0;font-size: 22px;color: #000;font-weight: 700;line-height: 26px;letter-spacing: -0.7px;word-break: keep-all;}
 .detailsType03 .detailsTitle:before{content: "";display: block;width: 20px;height: 1px;margin-bottom: 10px;background: #222222;}
 .detailsType03 .detailsText{padding: 20px 16px 33px;font-size: 15px;color: #444;font-weight: 400;line-height: 24px;letter-spacing: -0.6px;word-break: keep-all;}
-.scrollLeft{display: flex;align-items: center;justify-content: flex-end;width: 200%;padding: 28px 0 43px;font-size: 70px;color: rgba(0, 0, 0, 0.1);font-weight: 700;line-height: 84px;text-align: center;letter-spacing: -0.6px;white-space: nowrap;}
+.scrollLeft{display: flex;align-items: center;justify-content: flex-end;width: 200%;padding: 28px 0 43px;font-size: 70px;color: rgba(0, 0, 0, 0.1);font-weight: 700;line-height: 84px;text-align: center;letter-spacing: -0.6px;white-space: nowrap;-webkit-backface-visibility: hidden;}
 
 
 @media screen and (max-width: 820px){
