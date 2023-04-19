@@ -120,6 +120,7 @@
                             if (navigator.geolocation) {
                                 var options = {timeout:60000};
                                 navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+                                LatLng.setMap(null);
                                 removeMarker();
                             } else {
                                 alert("GPS_추적이 불가합니다.");
