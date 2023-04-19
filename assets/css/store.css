@@ -5,7 +5,7 @@
 .storeName + .storeAddress:before{content: "";display: block;width: 10px;height: 1px;margin: 7px auto 11px;background-color: #fff;}
 .storeSlide{margin-bottom: 0 !important;margin-top: 24px;}
 .storeSlide .slick-list{border-radius: 10px;overflow: hidden;}
-.storeSlide .storeItem img{width: 100%;margin: 0 auto;}
+.storeSlide .storeThumb img{width: 100%;margin: 0 auto;}
 .storeSlide .slick-dots{position: inherit;bottom: inherit;line-height: 0;margin-top: 15px;}
 .storeSlide .slick-dots li{width: 5px;height: 5px;margin: 0;vertical-align: middle;}
 .storeSlide .slick-dots li + li{margin-left: 5px;}
