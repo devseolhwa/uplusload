@@ -1,10 +1,10 @@
 // gnb
 $(document).on("click", "#btnGnbOpen", function () {
-     $("#gnb").fadeIn("400").addClass("active");
+     $("#gnb").fadeIn("400").addClass("active").focus();
      return false;
 }).on("click", "#btnGnbClose", function () {
     $("#gnb").removeClass("active");
-    return false;
+    return false;   
 });
 
 // scroll
