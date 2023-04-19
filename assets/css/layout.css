@@ -2,7 +2,7 @@
 .pcWrap{}
 .mWrap{position: relative;min-height: 100vh;width: 100%;max-width: 390px;margin: 0 0 0 calc(50vw + 0px);background-color: #fff;box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);overflow: hidden;}
 
-header{position: relative;z-index: 99;-webkit-transition: all 0.5s ease;transition: all 0.5s ease;}
+header{position: relative;z-index: 99;-webkit-transition: all 0.3s ease;transition: all 0.3s ease;}
 .headerWrap:after{content: "";display: block;clear: both;}
 .headerWrap .logo{float: left;margin: 23px 0 27px 16px;}
 .headerWrap .logo img.off{display: block;}

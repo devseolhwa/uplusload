@@ -1,11 +1,9 @@
 $(function(){
-    let storeSlideCheck = $(".storeSlide");
-    if (storeSlideCheck.length) {
-        storeSlide(); // store Slide
-    }
-    // store Slide
-    function storeSlide() {
-        storeSlideCheck.slick({
+
+    // store slide
+    let storeSlide = $(".storeSlide");
+    if (storeSlide.length) {
+        storeSlide.slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
@@ -18,4 +16,21 @@ $(function(){
             arrows: false
         });
     }
+
+    // text scroll
+    document.querySelectorAll(".scrollLeft").forEach(function(item){
+        let $scrollLeftItem = item;
+
+        gsap.to($scrollLeftItem, {
+            scrollTrigger: {
+                trigger: $scrollLeftItem,
+                end: "bottom top",
+                scrub: 0.6
+            },
+            xPercent: -100,
+            duration: 3,
+            ease: "linear"
+        });
+    });
+
 });

@@ -40,19 +40,3 @@ $("#btnTop").click(() => {
     scrollToTop();
     return false;
 });
-
-// text scroll
-document.querySelectorAll(".scrollLeft").forEach(function(item){
-    let $scrollLeftItem = item;
-
-    gsap.to($scrollLeftItem, {
-        scrollTrigger: {
-            trigger: $scrollLeftItem,
-            end: "bottom top",
-            scrub: 0.6
-        },
-        xPercent: -100,
-        duration: 3,
-        ease: "linear"
-    });
-});
