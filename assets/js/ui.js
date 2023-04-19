@@ -32,6 +32,13 @@ window.addEventListener("load", function() {
     });
 });
 
+// store view page progress
+let storeDetails = $(".storeDetails");
+if (storeDetails.length) {
+    var progress = "<div class='progress'><div class='bar'></div></div>";
+    $("header").append(progress);
+}
+
 // 상단으로
 const scrollToTop = () => {
     $("html, body").animate({scrollTop:0}, 500);
