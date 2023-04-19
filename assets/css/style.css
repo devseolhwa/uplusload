@@ -4,8 +4,7 @@
 .mapTopFix{position: fixed;width: 100%;height: 100%;top: 0;bottom: 0;left: 0;right: 0;z-index: 0;}
 .mapTopFix .mapWrap{position: absolute;left: calc(50vw + 0px);top: 70px;width: 100%;max-width: 390px;height: 290px;}
 .mapTopFix + div{position: relative;margin-top: 290px;z-index: 1;}
-.btnMyPosition{position: absolute;left: 10px;bottom: 30px;width: 42px;height: 42px;background: #fff;border: 1px solid #E0E0E0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);border-radius: 5px;background-image: url(../images/icon_myLocation.svg);background-position: center;background-repeat: no-repeat;box-sizing: border-box;overflow: hidden;text-indent: -9999px;white-space: nowrap;z-index: 2;}
-.btnMyPosition:before{position: absolute;left: 10px;bottom: 30px;width: 42px;height: 42px;background: #fff;border: 1px solid #E0E0E0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);border-radius: 5px;background-image: url(../images/icon_myLocation.svg);background-position: center;background-repeat: no-repeat;box-sizing: border-box;overflow: hidden;text-indent: -9999px;white-space: nowrap;z-index: 2;}
+.btnMyPosition{position: absolute;left: 10px;bottom: 30px;width: 44px;height: 44px;background: #fff;border: 1px solid #E0E0E0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);border-radius: 5px;background-image: url(../images/icon_myLocation.svg);background-position: center;background-repeat: no-repeat;box-sizing: border-box;overflow: hidden;text-indent: -9999px;white-space: nowrap;z-index: 2;}
 .myPosition{position: relative;width: 16px;height: 16px;}
 .myPosition:before{content: "";position: absolute;top: 50%;left: 50%;width: 16px;height: 16px;margin-left: -8px;margin-top: -8px;background-color: #fff;border-radius: 50%;-webkit-animation: myPositionOn 2s infinite;-moz-animation: myPositionOn 2s infinite;-ms-animation: myPositionOn 2s infinite;-o-animation: myPositionOn 2s infinite;animation: myPositionOn 2.2s infinite;}
 .myPosition img{max-width: inherit;vertical-align: 0;}
@@ -14,48 +13,10 @@
 .storePin a{display: block;overflow: hidden;background: #FF0097 url(../images/icon_arrow_white.svg) no-repeat right 15px center;border-radius: 10px;text-align: center;}
 .storePin .name{display: block;margin-right: 38px;padding: 11px 15px;background: #fff;font-size: 13px;color: #333;line-height: 16px;font-weight: 700;letter-spacing: -0.6px;}
 
-.storeSlideWrap{padding: 25px 16px 40px;background-size: cover;background-position: center;background-repeat: no-repeat;box-sizing: border-box;}
-.storeSlideWrap.store10oclock{background-image: url(../images/bg_store10oclock.jpg);}
-.storeName{font-size: 28px;color: #fff;font-weight: 700;line-height: 32px;text-align: center;letter-spacing: -0.6px;}
-.storeAddress{font-size: 15px;color: #fff;font-weight: 400;line-height: 18px;text-align: center;letter-spacing: -0.6px;opacity: 0.9;}
-.storeName + .storeAddress:before{content: "";display: block;width: 10px;height: 1px;margin: 7px auto 11px;background-color: #fff;}
-.storeSlide{margin-bottom: 0 !important;margin-top: 24px;}
-.storeSlide .storeItem img{margin: 0 auto;border-radius: 10px;overflow: hidden;}
-.storeSlide .slick-dots{position: inherit;bottom: inherit;line-height: 0;margin-top: 15px;}
-.storeSlide .slick-dots li{width: 5px;height: 5px;margin: 0;vertical-align: middle;}
-.storeSlide .slick-dots li + li{margin-left: 5px;}
-.storeSlide .slick-dots li button{width: 100%;height: 100%;padding: 0;background-color: rgba(255, 255, 255, 0.3);border-radius: 5px}
-.storeSlide .slick-dots li button:before{display: none;}
-.storeSlide .slick-dots li.slick-active{width: 15px;}
-.storeSlide .slick-dots li.slick-active button{background-color: rgba(255, 255, 255, 0.85);}
-.storeInfo{position: relative;display: flex;align-items: flex-start;justify-content: space-between;padding: 20px 0;margin-top: 15px;border-top: 1px solid rgba(255, 255, 255, 0.3);border-bottom: 1px solid rgba(255, 255, 255, 0.3);box-sizing: border-box;}
-.storeInfo:before{content: "";position: absolute;top: 20px;left: 33.3%;display: block;width: 1px;height:  calc(100% - 40px);background-color: rgba(255, 255, 255, 0.3);border-radius: 30px;}
-.storeInfo:after{content: "";position: absolute;top: 20px;left: 66.6%;display: block;width: 1px;height:  calc(100% - 40px);background-color: rgba(255, 255, 255, 0.3);border-radius: 30px;}
-.storeInfo li{flex: 1;display: flex;justify-content: center;flex-direction: column;flex-wrap: wrap;margin: 9px 0;text-align: center;}
-.storeInfo li strong{margin-top: 9px;font-size: 15px;color: #fff;font-weight: 700;line-height: 26px;letter-spacing: -0.6px;}
-.storeInfo li p{margin-top: 4px;font-size: 13px;color: #fff;font-weight: 400;line-height: 20px;letter-spacing: -0.6px;word-break: keep-all;}
-.scrollDown{position: relative;margin-top: 30px;text-align: center;-webkit-animation: scrollDown 2.2s infinite;-moz-animation: scrollDown 2.2s infinite;-ms-animation: scrollDown 2.2s infinite;-o-animation: scrollDown 2.2s infinite;animation: scrollDown 2.2s infinite;}
-.scrollDown p {margin-bottom: 6px;font-size: 13px;color: #fff;font-weight: 700;line-height: 26px;letter-spacing: -0.8px;-webkit-transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);-webkit-transition-delay: .4s;transition-delay: .4s;}
-.scrollDown i {position: relative;display: inline-block;width: 18px;height: 27px;border: 1px solid #fff;border-radius: 15px;box-sizing: border-box;}
-.scrollDown i:after {content: "";position: absolute;top: 5px;left: 50%;transform: translateX(-50%);width: 1px;height: 6px;border-radius: 2px;background: #fff;-webkit-animation: scrollDownIcon 2s infinite;-moz-animation: scrollDownIcon 2s infinite;-ms-animation: scrollDownIcon 2s infinite;-o-animation: scrollDownIcon 2s infinite;animation: scrollDownIcon 2s infinite;}
-.storeDetails{background: #F9F9F9;}
-.detailsType01{text-align: left;}
-.detailsType01 img{display: block;margin: 0 auto;}
-.detailsType01 .detailsTitle{padding: 30px 16px 0;font-size: 22px;color: #000;font-weight: 700;line-height: 26px;letter-spacing: -0.7px;word-break: keep-all;}
-.detailsType01 .detailsTitle:before{content: "";display: block;width: 20px;height: 1px;margin-bottom: 10px;background: #222222;}
-.detailsType01 .detailsText{padding: 20px 16px 26px;font-size: 15px;color: #444;font-weight: 400;line-height: 22px;letter-spacing: -0.6px;word-break: keep-all;}
-.detailsType02{margin: 16px;padding: 10px 10px 35px;background: #fff;box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);border-radius: 10px;box-sizing: border-box;text-align: center;}
-.detailsType02 img{display: block;margin: 0 auto;border-radius: 10px;}
-.detailsType02 .detailsTitle{padding: 30px 0 0;font-size: 22px;color: #000;font-weight: 700;line-height: 26px;letter-spacing: -0.7px;word-break: keep-all;}
-.detailsType02 .detailsTitle:before{content: "";display: block;width: 20px;height: 1px;margin: 0 auto 10px;background: #222222;}
-.detailsType02 .detailsText{padding: 20px 0 0;font-size: 15px;color: #444;font-weight: 400;line-height: 24px;letter-spacing: -0.6px;word-break: keep-all;}
-.detailsType03{background-color: #fff;text-align: left;}
-.detailsType03 img{display: block;margin: 0 auto;}
-.detailsType03 .detailsTitle{padding: 30px 16px 0;font-size: 22px;color: #000;font-weight: 700;line-height: 26px;letter-spacing: -0.7px;word-break: keep-all;}
-.detailsType03 .detailsTitle:before{content: "";display: block;width: 20px;height: 1px;margin-bottom: 10px;background: #222222;}
-.detailsType03 .detailsText{padding: 20px 16px 33px;font-size: 15px;color: #444;font-weight: 400;line-height: 24px;letter-spacing: -0.6px;word-break: keep-all;}
-.scrollLeft{display: flex;align-items: center;justify-content: flex-end;width: 200%;padding: 28px 0 43px;font-size: 70px;color: rgba(0, 0, 0, 0.1);font-weight: 700;line-height: 84px;text-align: center;letter-spacing: -0.6px;white-space: nowrap;-webkit-backface-visibility: hidden;}
-
+.custom_zoomcontrol {position:absolute;top:50px;right:10px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
+.custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
+.custom_zoomcontrol span img {width:15px;height:15px;padding:12px 0;border:none;}             
+.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}          
 
 @media screen and (max-width: 820px){
 

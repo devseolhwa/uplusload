@@ -4,7 +4,8 @@
 .storeAddress{font-size: 15px;color: #fff;font-weight: 400;line-height: 18px;text-align: center;letter-spacing: -0.6px;opacity: 0.9;}
 .storeName + .storeAddress:before{content: "";display: block;width: 10px;height: 1px;margin: 7px auto 11px;background-color: #fff;}
 .storeSlide{margin-bottom: 0 !important;margin-top: 24px;}
-.storeSlide .storeItem img{margin: 0 auto;border-radius: 10px;overflow: hidden;}
+.storeSlide .slick-list{border-radius: 10px;overflow: hidden;}
+.storeSlide .storeItem img{width: 100%;margin: 0 auto;}
 .storeSlide .slick-dots{position: inherit;bottom: inherit;line-height: 0;margin-top: 15px;}
 .storeSlide .slick-dots li{width: 5px;height: 5px;margin: 0;vertical-align: middle;}
 .storeSlide .slick-dots li + li{margin-left: 5px;}
@@ -15,7 +16,7 @@
 .storeInfo{position: relative;display: flex;align-items: flex-start;justify-content: space-between;padding: 20px 0;margin-top: 15px;border-top: 1px solid rgba(255, 255, 255, 0.3);border-bottom: 1px solid rgba(255, 255, 255, 0.3);box-sizing: border-box;}
 .storeInfo:before{content: "";position: absolute;top: 20px;left: 33.3%;display: block;width: 1px;height:  calc(100% - 40px);background-color: rgba(255, 255, 255, 0.3);border-radius: 30px;}
 .storeInfo:after{content: "";position: absolute;top: 20px;left: 66.6%;display: block;width: 1px;height:  calc(100% - 40px);background-color: rgba(255, 255, 255, 0.3);border-radius: 30px;}
-.storeInfo li{flex: 1;display: flex;justify-content: center;flex-direction: column;flex-wrap: wrap;margin: 9px 0;text-align: center;}
+.storeInfo li{flex: 1;display: flex;justify-content: center;flex-direction: column;flex-wrap: wrap;margin: 9px 0;padding: 0 5px;box-sizing: border-box;text-align: center;}
 .storeInfo li strong{margin-top: 9px;font-size: 15px;color: #fff;font-weight: 700;line-height: 26px;letter-spacing: -0.6px;}
 .storeInfo li p{margin-top: 4px;font-size: 13px;color: #fff;font-weight: 400;line-height: 20px;letter-spacing: -0.6px;word-break: keep-all;}
 .scrollDown{position: relative;margin-top: 30px;text-align: center;-webkit-animation: scrollDown 2.2s infinite;-moz-animation: scrollDown 2.2s infinite;-ms-animation: scrollDown 2.2s infinite;-o-animation: scrollDown 2.2s infinite;animation: scrollDown 2.2s infinite;}
@@ -26,16 +27,16 @@
 .detailsType01{text-align: left;}
 .detailsType01 img{display: block;margin: 0 auto;}
 .detailsType01 .detailsTitle{padding: 30px 16px 0;font-size: 22px;color: #000;font-weight: 700;line-height: 26px;letter-spacing: -0.7px;word-break: keep-all;}
-.detailsType01 .detailsTitle:before{content: "";display: block;width: 20px;height: 1px;margin-bottom: 10px;background: #222222;}
+.detailsType01 .detailsTitle:before{content: "";display: block;width: 20px;height: 1px;margin-bottom: 10px;background: #222;}
 .detailsType01 .detailsText{padding: 20px 16px 26px;font-size: 15px;color: #444;font-weight: 400;line-height: 22px;letter-spacing: -0.6px;word-break: keep-all;}
 .detailsType02{margin: 16px;padding: 10px 10px 35px;background: #fff;box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);border-radius: 10px;box-sizing: border-box;text-align: center;}
 .detailsType02 img{display: block;margin: 0 auto;border-radius: 10px;}
 .detailsType02 .detailsTitle{padding: 30px 0 0;font-size: 22px;color: #000;font-weight: 700;line-height: 26px;letter-spacing: -0.7px;word-break: keep-all;}
-.detailsType02 .detailsTitle:before{content: "";display: block;width: 20px;height: 1px;margin: 0 auto 10px;background: #222222;}
+.detailsType02 .detailsTitle:before{content: "";display: block;width: 20px;height: 1px;margin: 0 auto 10px;background: #222;}
 .detailsType02 .detailsText{padding: 20px 0 0;font-size: 15px;color: #444;font-weight: 400;line-height: 24px;letter-spacing: -0.6px;word-break: keep-all;}
 .detailsType03{background-color: #fff;text-align: left;}
 .detailsType03 img{display: block;margin: 0 auto;}
 .detailsType03 .detailsTitle{padding: 30px 16px 0;font-size: 22px;color: #000;font-weight: 700;line-height: 26px;letter-spacing: -0.7px;word-break: keep-all;}
-.detailsType03 .detailsTitle:before{content: "";display: block;width: 20px;height: 1px;margin-bottom: 10px;background: #222222;}
+.detailsType03 .detailsTitle:before{content: "";display: block;width: 20px;height: 1px;margin-bottom: 10px;background: #222;}
 .detailsType03 .detailsText{padding: 20px 16px 33px;font-size: 15px;color: #444;font-weight: 400;line-height: 24px;letter-spacing: -0.6px;word-break: keep-all;}
 .scrollLeft{display: flex;align-items: center;justify-content: flex-end;width: 200%;padding: 28px 0 43px;font-size: 70px;color: rgba(0, 0, 0, 0.1);font-weight: 700;line-height: 84px;text-align: center;letter-spacing: -0.6px;white-space: nowrap;}

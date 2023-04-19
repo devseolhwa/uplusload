@@ -63,6 +63,10 @@
                     <div class="mapWrap">
                         <button type="button" class="btnMyPosition" onclick="gps_tracking();">내위치</button>
                         <div id="map" style="width: 100%;height: 290px;"></div>
+                        <div class="custom_zoomcontrol radius_border"> 
+                            <span onclick="zoomIn()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>  
+                            <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                        </div>
                         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d33f98f36ac24cf4e5878e94b8c8fad9"></script>
                         <script>
                             var mapContainer = document.getElementById("map"), // 지도를 표시할 div 
@@ -107,9 +111,15 @@
                                 });
                             }
                             
-                            // 지도에 확대 축소 컨트롤을 생성한다
-                            var zoomControl = new kakao.maps.ZoomControl();
-                            map.addControl(zoomControl, kakao.maps.ControlPosition.BOTTOMRIGHT);
+                            // 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+                            function zoomIn() {
+                                map.setLevel(map.getLevel() - 1);
+                            }
+
+                            // 지도 확대, 축소 컨트롤에서 축소 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+                            function zoomOut() {
+                                map.setLevel(map.getLevel() + 1);
+                            }
 
                             // 내 위치 스크립트 시작
                             var gps_use = null; //gps의 사용가능 여부
@@ -176,40 +186,11 @@
                         </script>
                     </div>
                 </div>
-                <!-- [전달사항] 매장별 bg가 다르기 때문에 .storeSlideWrap에 추가로 매장별 클래스명 부여 필요 -->
-                <div class="storeSlideWrap store10oclock">
-                    <h3 class="storeName">10 o’ clock</h3>
-                    <p class="storeAddress">서울시 종로구 통인동 147-10</p>
-                    <div class="storeSlide">
-                        <div class="storeItem"><img src="assets/images/img_10oclockSlide01.jpg" alt="10 o’ clock 사진"></div>
-                        <div class="storeItem"><img src="assets/images/img_10oclockSlide02.jpg" alt="10 o’ clock 사진"></div>
-                        <div class="storeItem"><img src="assets/images/img_10oclockSlide01.jpg" alt="10 o’ clock 사진"></div>
-                        <div class="storeItem"><img src="assets/images/img_10oclockSlide02.jpg" alt="10 o’ clock 사진"></div>
+                <div class="storeList">
+                    <div class="storeItem">
+
                     </div>
-                    <ul class="storeInfo">
-                        <li>
-                            <img src="assets/images/icon_store_time.svg" alt="영업시간 아이콘">
-                            <strong>영업시간</strong>
-                            <p>평일 09:00~23:00<br />주말 11:00~23:00</p>
-                        </li>
-                        <li>
-                            <img src="assets/images/icon_store_calendar.svg" alt="휴일 아이콘">
-                            <strong>휴일</strong>
-                            <p>첫째·셋째 화요일</p>
-                        </li>
-                        <li>
-                            <img src="assets/images/icon_store_benefit.svg" alt="혜택 아이콘">
-                            <strong>매장내 혜택</strong>
-                            <p>음식 주문시<br />“고로케 3개 무료”</p>
-                        </li>
-                    </ul>
-                    <div class="scrollDown">
-                        <p>Scroll Down</p>
-                        <i><span class="blind">스크롤아이콘</span></i>
-                    </div>
-                </div><!-- storeSlideWrap end -->
-                
-                
+                </div><!-- storeList end -->
             </div><!-- contents end -->
 
             <footer>

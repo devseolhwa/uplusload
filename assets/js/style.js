@@ -9,7 +9,7 @@ $(function(){
             autoplay: true,
             autoplaySpeed: 4000,
             speed: 700,
-            adaptiveHeigh: true,
+            adaptiveHeight: true,
             dots: true,
             infinite: true,
             pauseOnHover: false,
