@@ -143,8 +143,7 @@
                             gps_use = false;
                         }
                         function gps_tracking(){
-                            LatLng.setMap(null);
-                                removeMarker();
+                            removeMarker();
                             if (gps_use) {
                                 map.panTo(new kakao.maps.LatLng(gps_lat,gps_lng));
                                 var gps_content = '<div class="myPosition"><img unselectable="on" src="assets/images/myPositionPin.svg" alt=""></div>';
