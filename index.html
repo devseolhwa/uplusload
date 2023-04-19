@@ -151,8 +151,8 @@
                                     map: map
                                 });
                                 //currentOverlay.setMap(map);
-                                let positionCheck = $(".myPosition");
-                                if (positionCheck.length) {
+                                let positionCheck = $("#map").length(".myPosition");
+                                if (positionCheck) {
                                     currentOverlay.setMap(null);
                                 } else {
                                     currentOverlay.setMap(map);
