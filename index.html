@@ -142,7 +142,6 @@
                             gps_use = false;
                         }
                         function gps_tracking(){
-                            currentOverlay.setMap(null);
                             if (gps_use) {
                                 map.panTo(new kakao.maps.LatLng(gps_lat,gps_lng));
                                 var gps_content = '<div class="myPosition"><img unselectable="on" src="assets/images/myPositionPin.svg" alt=""></div>';
@@ -151,13 +150,13 @@
                                     content: gps_content,
                                     map: map
                                 });
-                                currentOverlay.setMap(map);
-                                /* let positionCheck = $(".myPosition");
+                                //currentOverlay.setMap(map);
+                                let positionCheck = $(".myPosition");
                                 if (positionCheck.length) {
-                                    currentOverlay.setMap(map);
+                                    currentOverlay.setMap(null);
                                 } else {
                                     currentOverlay.setMap(map);
-                                } */
+                                }
                             } else {
                                 alert("접근차단하신 경우 새로고침, 아닌 경우 잠시만 기다려주세요.");
                                 gps_check();
