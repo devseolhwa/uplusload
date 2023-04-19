@@ -130,8 +130,8 @@
                             gps_use = true;
                             gps_lat = position.coords.latitude;
                             gps_lng = position.coords.longitude;
-                                
-                            removeCurrentOverlay();
+                            
+                            removeMarker();
                         }
 
                         // error발생 시 에러의 종류를 알려주는 함수.
@@ -153,16 +153,17 @@
                                     map: map
                                 });
                                 currentOverlay.setMap(map);
+                                markers.push(currentOverlay);
                             } else {
                                 alert("접근차단하신 경우 새로고침, 아닌 경우 잠시만 기다려주세요.");
                                 gps_check();
                             }
                         }
-                        function removeCurrentOverlay() {
-                            for (var i = 0; i < currentOverlay.length; i++) {
-                                currentOverlay[i].setMap(null);
+                        function removeMarker() {
+                            for ( var i = 0; i < markers.length; i++ ) {
+                                markers[i].setMap(null);
                             }   
-                            currentOverlay = [];
+                            markers = [];
                         }
                     </script>
                 </div>
