@@ -4,7 +4,7 @@
 
 header{position: relative;z-index: 99;-webkit-transition: all 0.3s ease;transition: all 0.3s ease;}
 .headerWrap:after{content: "";display: block;clear: both;}
-.headerWrap .logo{float: left;margin: 23px 0 27px 16px;}
+.headerWrap .logo{float: left;margin: 11px 0 11px 16px;}
 .headerWrap .logo img.off{display: block;}
 .headerWrap .logo img.on{display: none;}
 .headerWrap #btnGnbOpen{float: right;position: relative;display: block;width: 42px;height: 42px;margin: 14px 16px 14px 0;background-image: url(../images/icon_gnb_open.svg);background-position: center;background-repeat: no-repeat;overflow: hidden;text-indent: -9999px;white-space: nowrap;}
@@ -45,7 +45,8 @@ footer{position: relative;background: #2E2E2E;padding: 16px 16px 9px;box-sizing:
 .footerInfo{padding: 14px 0;border-bottom: 1px solid rgba(217, 217, 217, 0.2);box-sizing: border-box;}
 .footerInfo li{font-size: 12px;color: #fff;font-weight: 400;line-height: 24px;letter-spacing: -0.6px;}
 .footerInfo li span{color: #ABABAB;}
-.footerInfo li span:before{content: "";display: inline-block;width: 1px;height: 9px;margin: 0 8px; background-color: #fff;vertical-align: middle;}
+.footerInfo li span:before{content: "";display: inline-block;width: 1px;height: 9px;margin: 0 8px; background-color: #fff;vertical-align: -1px;}
+.footerInfo li a{margin-left: 5px;color: #fff;text-decoration-line: underline;}
 .copyright{margin-top: 10px;font-size: 12px;color: #B4B4B4;font-weight: 400;line-height: 24px;letter-spacing: -0.6px;}
 .copyright span{color: #FF0097;}
 #btnTop{opacity: 0;transform: translate(0, 30px);position: fixed;bottom: 30px;left: calc(50vw + 310px);width: 50px;height: 50px;background-color: rgba(255, 0, 151, 0.7);backdrop-filter: blur(2px);background-image: url(../images/icon_top.svg);background-position: center;background-repeat: no-repeat;border-radius: 50%;overflow: hidden;text-indent: -9999px;white-space: nowrap;transition: 1s;-webkit-transition: 1s;pointer-events: none;z-index: 99;}
