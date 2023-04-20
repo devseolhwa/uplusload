@@ -10,10 +10,11 @@ $(document).on("click", "#btnGnbOpen", function () {
 // scroll
 let header = document.querySelector("header"),
     btnTop = document.querySelector("#btnTop"),
-    storeDetails = document.querySelectorAll(".storeDetails");
+    storeDetails = document.querySelectorAll(".storeDetails"),
+    headerH = 70;
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY) {
+    if (window.scrollY > headerH) {
         header.classList.add("fixed");
         btnTop.classList.add("show");
     } else {
