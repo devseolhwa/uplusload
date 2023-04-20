@@ -1,9 +1,15 @@
 // gnb
 $(document).on("click", "#btnGnbOpen", function () {
-     $("#gnb").fadeIn("400").addClass("active").focus();
-     return false;
+    $("#gnb").fadeIn("400").addClass("active").focus();
+    $(".mWrap").on("scroll touchmove mousewheel", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    });
+    return false;
 }).on("click", "#btnGnbClose", function () {
     $("#gnb").removeClass("active");
+    $(".mWrap").off("scroll touchmove mousewheel");
     return false;   
 });
 
@@ -23,6 +29,11 @@ window.addEventListener("scroll", () => {
     }
 });
 window.addEventListener("load", function() {
+    // storeview 페이지에만 progress 삽입
+    if (storeDetails.length) {
+        let progressHtml = "<div class='progress'><div class='bar'></div></div>";
+        header.insertAdjacentHTML("beforeend", progressHtml);
+    }
     window.addEventListener("scroll", function() {
         var wintop = window.pageYOffset || document.documentElement.scrollTop,
             docheight = document.querySelector("body").offsetHeight,
@@ -33,11 +44,6 @@ window.addEventListener("load", function() {
             document.querySelector(".bar").style.width = totalScroll + "%";
         }
     });
-    // storeview 페이지에만 progress 삽입
-    if (storeDetails.length) {
-        let progressHtml = "<div class='progress'><div class='bar'></div></div>";
-        header.insertAdjacentHTML("beforeend", progressHtml);
-    }
 });
 
 // 상단으로

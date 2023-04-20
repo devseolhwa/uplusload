@@ -19,7 +19,7 @@
 
 .storeList{position: relative;padding: 40px 16px 20px;background: #fff;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);box-sizing: border-box;display: flex;flex-direction: row;flex-wrap: wrap;align-items: flex-start;justify-content: space-between;}
 .storeList:before{content: "";display: block;position: absolute;top: 15px;left: 50%; transform: translate(-50%, 0%);width: 100px;height: 5px;background: #E0E0E0;border-radius: 15px;}
-.storeList .storeItem{width: calc(50% - 5px);padding: 10px 12px 11px;margin-top: 10px;background: #fff;border: 1px solid #E1E1E1;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);border-radius: 10px;box-sizing: border-box;text-align: center;}
+.storeList .storeItem{width: calc(50% - 5px);padding: 10px 12px 11px;margin-top: 10px;background: #fff;border: 1px solid #E1E1E1;box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);border-radius: 10px;box-sizing: border-box;text-align: center;transition: .3s;-webkit-transition: .3s;}
 .storeList .storeItem:nth-child(2n+2){margin-left: 10px;}
 .storeList .storeItem:nth-child(-n+2){margin-top: 0;}
 .storeList .storeItem .storeThumb{position: relative;display: block;width: 100%;padding: 81.09% 0 0;}
@@ -27,6 +27,15 @@
 .storeList .storeItem .storeName{margin-top: 18px;font-size: 16px;color: #000;font-weight: 700;line-height: 20px;letter-spacing: -0.7px;word-break: keep-all;}
 .storeList .storeItem .storeBenefit{font-size: 13px;color: #444;font-weight: 400;line-height: 20px;letter-spacing: -0.6px;word-break: keep-all;}
 .storeList .storeItem .btnStoreView{width: 100%;height: 40px;margin-top: 10px;background: #fff;border: 1px solid #FF0097;border-radius: 10px;box-sizing: border-box;font-size: 13px;color: #FF0097;font-weight: 700;line-height: 24px;letter-spacing: -0.6px;}
+.storeList .storeItem.on{background: #FF0097;}
+.storeList .storeItem.on .storeName, .storeList .storeItem.on .storeBenefit{color: #fff;}
+
+.rouletterArea{position: relative;width: 400px;height: 400px;}
+.rouletterArea .rouletterImg{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: 350px;height: 350px;border-radius: 350px;overflow: hidden;}
+.rouletterArea .rouletterImg .rouletterEl{width: 100%;height: 100%;transition-timing-function: ease-in-out;transition: 2s;}
+.rouletterArea .rouletterPin{position: absolute;top: 0;left: 50%;transform: translateX(-50%);width: 1px;height: 1px;border-right: 10px solid transparent;border-left: 10px solid transparent;border-top: 40px solid red;border-bottom: 0px solid transparent;}
+.btnRouletter {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;border-radius: 80px;background: #fff;border: 2px solid;}
+.hiddenInput{display: none;}
 
 
 @media screen and (max-width: 820px){
