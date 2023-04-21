@@ -14,7 +14,7 @@
 .storePin a{display: block;overflow: hidden;background: #FF0097 url(../images/icon_arrow_white.svg) no-repeat right 15px center;border-radius: 10px;text-align: center;}
 .storePin .name{display: block;margin-right: 38px;padding: 11px 15px;background: #fff;font-size: 13px;color: #333;line-height: 16px;font-weight: 700;letter-spacing: -0.6px;}
 .mapTopBack{position: fixed;width: 100%;height: 100%;top: 0;bottom: 0;left: 0;right: 0;z-index: 0;}
-.mapTopBack .mapWrap{position: absolute;left: calc(50vw + 0px);top: 70px;width: 100%;max-width: 390px;height: 290px;}
+.mapTopBack .mapWrap{position: absolute;left: calc(50vw + 0px);top: 0;width: 100%;max-width: 390px;height: 360px;}
 .mapTopBack + .mapFront{position: relative;margin-top: 290px;z-index: 1;}
 
 .storeList{position: relative;padding: 40px 16px 20px;background: #fff;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);box-sizing: border-box;display: flex;flex-direction: row;flex-wrap: wrap;align-items: flex-start;justify-content: space-between;}
