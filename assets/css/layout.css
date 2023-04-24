@@ -28,7 +28,7 @@ header{position: relative;background: #fff;z-index: 99;-webkit-transition: all 0
 #btnGnbClose {position: absolute;top: 14px;left: -56px;width: 42px;height: 42px;overflow: hidden;text-indent: -9999px;white-space: nowrap;background-image: url(../images/icon_gnb_close.svg);background-position: center;background-repeat: no-repeat;}
 #gnb.active {opacity: 1;visibility: visible;-webkit-transition-delay: 0s;transition-delay: 0s;}
 #gnb.active .gnbInner{transform: translateX(0);-webkit-transform: translateX(0);transition-duration: 0.5s;-webkit-transition-duration: 0.5s;}
-header.fixed{position: fixed;top: 0;width: 100%;max-width: 390px;background: rgba(255, 0, 151, 0.6);backdrop-filter: blur(2px);}
+header.fixed{position: fixed;top: 0;width: 100%;max-width: 390px;background: rgba(255, 0, 151, 0.6);-webkit-backdrop-filter: blur(2px);backdrop-filter: blur(2px);}
 header.fixed .logo img.on{display: block;}
 header.fixed .logo img.off{display: none;}
 header.fixed #btnGnbOpen{background-image: url(../images/icon_gnb_open_fix.svg);}
@@ -49,7 +49,7 @@ footer{position: relative;background: #2E2E2E;padding: 16px 16px 9px;box-sizing:
 .footerInfo li a{margin-left: 5px;color: #fff;text-decoration-line: underline;}
 .copyright{margin-top: 10px;font-size: 12px;color: #B4B4B4;font-weight: 400;line-height: 24px;letter-spacing: -0.6px;}
 .copyright span{color: #FF0097;}
-#btnTop{opacity: 0;transform: translate(0, 30px);position: fixed;bottom: 30px;left: calc(50vw + 310px);width: 50px;height: 50px;background-color: rgba(255, 0, 151, 0.7);backdrop-filter: blur(2px);background-image: url(../images/icon_top.svg);background-position: center;background-repeat: no-repeat;border-radius: 50%;overflow: hidden;text-indent: -9999px;white-space: nowrap;transition: 1s;-webkit-transition: 1s;pointer-events: none;z-index: 99;}
+#btnTop{opacity: 0;transform: translate(0, 30px);position: fixed;bottom: 30px;left: calc(50vw + 310px);width: 50px;height: 50px;background-color: rgba(255, 0, 151, 0.7);-webkit-backdrop-filter: blur(2px);backdrop-filter: blur(2px);background-image: url(../images/icon_top.svg);background-position: center;background-repeat: no-repeat;border-radius: 50%;overflow: hidden;text-indent: -9999px;white-space: nowrap;transition: 1s;-webkit-transition: 1s;pointer-events: none;z-index: 99;}
 #btnTop.show{opacity: 1;transform: translate(0, 0);pointer-events: inherit;}
 
 @media screen and (max-width: 820px){
