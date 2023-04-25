@@ -69,7 +69,7 @@
 .rouletterArrow .slick-arrow{position: absolute;top: 50%;width: 30px;height: 30px;margin-top: -15px;background-image: url(../images/icon_slide_arrow_purple.svg);background-color: #fff;background-position: center;background-repeat: no-repeat;border: 1px solid #685DFF;border-radius: 50%;box-sizing: border-box;overflow: hidden;text-indent: -9999px;white-space: nowrap;z-index: 1;}
 .rouletterArrow .prev{left: -15px;}
 .rouletterArrow .next{right: -15px;transform: rotate(180deg);}
-.rouletterSlide{width: 250px;height: 250px;min-width: auto;margin: 0 auto;background-color: #fff;border-radius: 50%;-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);overflow: hidden;}
+.rouletterSlide .slick-list{width: 250px;height: 250px;background-color: #fff;border-radius: 50%;-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);overflow: hidden;}
 .rouletterSlide .slideItem {width: 250px;height: 250px;display: flex;align-items: center;justify-content: center;flex-direction: column;}
 .rouletterSlide .slideItem img{margin: 0 auto;}
 .rouletterSlide .slideItem p{position: relative;display: inline-block;}
