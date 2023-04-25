@@ -19,7 +19,7 @@
 
 /* text */
 .titleSm{display: block;text-align: center;}
-.titleSm p{display: inline-block;padding: 4px 12px;border-radius: 20px;box-sizing: border-box;font-size: 14px;color: #fff;font-weight: 700;line-height: 18px;text-align: center;letter-spacing: -0.6px;}
+.titleSm p{display: inline-block;padding: 4px 12px;border-radius: 20px;box-sizing: border-box;font-size: 15px;color: #fff;font-weight: 700;line-height: 18px;text-align: center;letter-spacing: -0.6px;}
 .titleSm span{color: #F8ED16;}
 .titleLg{text-align: center;margin-top: 15px;}
 .titleLg:after{content: "";display: block;width: 60px;height: 1px;margin: 15px auto;background-color: #000;}
@@ -72,8 +72,10 @@
 .rouletterSlide{width: 250px;height: 250px;min-width: auto;margin: 0 auto;background-color: #fff;border-radius: 50%;-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);overflow: hidden;}
 .rouletterSlide .slideItem {width: 250px;height: 250px;display: flex;align-items: center;justify-content: center;flex-direction: column;}
 .rouletterSlide .slideItem img{margin: 0 auto;}
-.rouletterSlide .slideItem p span{position: relative;padding: 0 5px;font-size: 18px;color: #000000;font-weight: 700;line-height: 22px;text-align: center;letter-spacing: -0.6px;}
-.rouletterSlide .slideItem p span:after{content: "";position: absolute;bottom: -1px;left: 0;display: block;width: 100%;height: 6px;background: rgba(104, 93, 255, 0.4);border-radius: 10px;box-sizing: border-box;}
+.rouletterSlide .slideItem p{position: relative;display: inline-block;}
+.rouletterSlide .slideItem p:after{content: "";position: absolute;bottom: 2px;left: 0;display: block;width: 100%;height: 6px;background: rgba(104, 93, 255, 0.4);border-radius: 10px;box-sizing: border-box;z-index: 0;}
+.rouletterSlide .slideItem p span{position: relative;padding: 0 3px;font-size: 18px;color: #000000;font-weight: 700;line-height: 22px;text-align: center;letter-spacing: -0.6px;z-index: 1;}
+
 
 /* ticket */
 .ticketWrap{position: relative;padding: 40px 16px 53px;background-image: url(../images/bg_ticket.jpg);background-color: #feaadc;background-repeat: no-repeat;background-position: bottom center;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);box-sizing: border-box;}
@@ -103,17 +105,17 @@
 /* stamp */
 .stampTopBack{position: fixed;width: 100%;height: 100%;top: 0;bottom: 0;left: 0;right: 0;z-index: 0;}
 .stampTopBack .stampCheckWrap{position: absolute;left: calc(50vw + 0px);top: 0;width: 100%;max-width: 390px;height: 370px;padding-top: 70px;background-image: url(../images/bg_stampCheck.jpg);background-size: cover;background-position: bottom center;background-repeat: no-repeat;box-sizing: border-box;}
-.stampTopBack + .stampFront{position: relative;margin-top: 250px;z-index: 1;}
+.stampTopBack + .stampFront{position: relative;margin-top: 250px;z-index: 1;transition: .3s;-webkit-transition: .3s;}
 .stampCheckWrap .stampCheckInner{padding: 20px 20px;}
 .stampCheckWrap .title{margin-top: 29px;font-size: 18px;color: #fff;font-weight: 400;line-height: 24px;text-align: center;letter-spacing: -0.6px;}
 .stampCheckWrap .title b{font-size: 20px;color: #FF0097;font-weight: 800;}
 .stampCheckWrap .text{font-size: 13px;color: #fff;font-weight: 400;line-height: 18px;text-align: center;letter-spacing: -0.6px;}
-#btnGetProductOpen{display: block;width: 150px;height: 40px;margin: 22px auto 25px;background: #FFFFFF;border: 1px solid #FF0097;border-radius: 10px;box-sizing: border-box;font-size: 13px;color: #FF0097;font-weight: 700;line-height: 24px;letter-spacing: -0.6px;text-align: center;}
+.btnGet{display: none;width: 150px;height: 40px;margin: 22px auto 25px;background: #FFFFFF;border: 1px solid #FF0097;border-radius: 10px;box-sizing: border-box;font-size: 13px;color: #FF0097;font-weight: 700;line-height: 24px;letter-spacing: -0.6px;text-align: center;}
+.btnGet.show{display: block;}
 .stampCheckWrap .text b{font-weight: 700;}
 .stampCheckWrap .stampGroup{display: flex;justify-content: space-between;align-items: center;flex-direction: row;padding: 25px;box-sizing: border-box;}
 .stampCheckWrap .stampGroup button{position: relative;display: block;width: 70px;height: 70px;background-image: url(../images/img_stamp.svg);background-position: center;background-repeat: no-repeat;overflow: hidden;text-indent: -9999px;white-space: nowrap;}
 .stampCheckWrap .stampGroup button.on{background-image: url(../images/img_stamp_on.svg);pointer-events: none;}
-
 .stampWrap{position: relative;padding: 95px 16px 54px;background-image: url(../images/bg_stampWrap.jpg);background-color: #F9E3F0;background-repeat: no-repeat;background-position: top center;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);box-sizing: border-box;}
 .stampWrap:before{content: "";display: block;position: absolute;top: 24px;left: 50%;transform: translate(-50%, 0%);width: 100px;height: 5px;background: #FF8DD0;border-radius: 15px;}
 .stampInfo{position: relative;padding: 21px 0;margin-top: 271px;background: #FFFFFF;border: 1px solid #000000;box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);border-radius: 10px;box-sizing: border-box;}
@@ -124,14 +126,43 @@
 .stampInfo ul li p{margin-top: 4px;font-size: 13px;color: #222222;font-weight: 400;line-height: 18px;letter-spacing: -0.6px;word-break: keep-all;}
 .dotList{margin-top: 13px;}
 .dotList li{font-size: 13px;color: #777777;font-weight: 400;line-height: 21px;text-align: center;letter-spacing: -0.6px;}
-.dotList li:before{content: "";display: inline-block;width: 3px;height: 3px;margin-right: 6px;background: #777;border-radius: 50%;vertical-align: 2px;}
+.dotList li:before{content: "";display: inline-block;width: 3px;height: 3px;margin-right: 6px;background: #777;border-radius: 100%;vertical-align: 2px;}
+.stampProduct{display: flex;justify-content: space-between;align-items: center;flex-direction: row;flex-wrap: wrap;margin: 30px auto 0;
+max-width: 332px;}
+.stampProduct li {display: flex;flex-direction: column;align-items: center;}
+.stampProduct li .img {width: 150px;height: 150px;border-radius: 100%;overflow: hidden;box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);}
+.stampProduct li .text {position: relative;display: inline-block;margin-top: 8px;}
+.stampProduct li .text span {position: relative;padding: 0 3px;font-size: 14px;color: #222;font-weight: 700;line-height: 17px;text-align: center;letter-spacing: -0.6px;z-index: 1;}
+.stampProduct li .text:before {content: "";position: absolute;bottom: 3px;left: 0;display: block;width: 100%;height: 5px;background: #FC72C3;border-radius: 10px;box-sizing: border-box;z-index: 0;}
+
+.popupWrap {position: fixed;top: 0;left: calc(50vw + 0px);right: 0;bottom: 0;max-width: 390px;height: 100%;background-color: rgba(0, 0, 0, 0.7);-webkit-overflow-scrolling: touch;z-index: 9999;opacity: 0;visibility: hidden;overflow-y: auto;-webkit-transition: all 0.5s ease;transition: all 0.5s ease;-webkit-transition-property: opacity, visibility;transition-property: opacity, visibility;-webkit-transition-delay: 100ms;transition-delay: 100ms;}
+.popupWrap .popupInner{position: fixed;top: 50%;left: calc(50vw + 16px);width: 100%;max-width: 358px;padding: 31px 17px 15px;background: #fff;border-radius: 10px;box-sizing: border-box;z-index: 999;transform: translate(0, -55%);-webkit-transform: translate(0, -55%);transition-duration: 0.5s;-webkit-transition-duration: 0.5s;-webkit-overflow-scrolling: touch;opacity: 1;}
+.popupWrap.show{opacity: 1;visibility: visible;}
+.popupWrap.show .popupInner{transform: translate(0, -50%);-webkit-transform: translate(0, -50%);transition-duration: 0.5s;-webkit-transition-duration: 0.5s;}
+.popupWrap h5{font-size: 20px;color: #FF0097;font-weight: 700;line-height: 18px;text-align: center;letter-spacing: -0.6px;}
+.popupWrap p{margin-top: 17px;margin-bottom: 22px;font-weight: 400;font-size: 16px;color: #555;line-height: 22px;text-align: center;letter-spacing: -0.6px;}
+.popupWrap .input{margin-top: 35px;margin-bottom: 15px;}
+.popupWrap .input input{width: 100%;height: 50px;background: #FFFFFF;border: 1px solid #949494;border-radius: 10px;color: #FF0097;text-align: center;outline: none;transition: .3s;-webkit-transition: .3s;}
+.popupWrap .input input:focus{border-color: #FF0097;}
+.popupBtnGroup{display: flex;align-items: center;flex-direction: row;justify-content: space-between;}
+.popupBtnGroup button{flex: 1;height: 44px;border-radius: 10px;box-sizing: border-box;font-size: 13px;font-weight: 700;line-height: 24px;letter-spacing: -0.6px;}
+.popupBtnGroup button + button{margin-left: 5px;}
+.btnPopupClose{background: #F1F1F1;border: 1px solid #D0D0D0;color: #7C7C7C;}
+.btnPopupCheck{background: #FF0097;border: 1px solid #FF0097;color: #fff;}
 
 @media screen and (max-width: 820px){
     .mapTopBack .mapWrap{left: 0;max-width: 100%;}
     .stampTopBack .stampCheckWrap{left: 0;max-width: 100%;}
+    .popupWrap{left: 0;max-width: 100%;}
+    .popupWrap .popupInner{left: 50%;transform: translate(-50%, -55%);-webkit-transform: translate(-50%, -55%);}
+    .popupWrap.show .popupInner{transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);}
 }
 @media screen and (max-width: 375px){
-
+    .popupWrap .popupInner{width: calc(100% - 70px);}
+}
+@media screen and (max-width: 320px){
+    .stampCheckWrap .stampGroup{padding: 25px 10px;}
+    .stampProduct li{flex: 1;}
 }
 
 /* scroll down */

@@ -62,13 +62,17 @@
                         <p class="title">매장 이용 후 스탬프를 모아<br /><b>경품을 받아요!</b></p>
                         <div class="stampGroup">
                             <!-- [전달사항] 스탬프를 얻었다면 클래스 on 추가 -->
-                            <button type="button" class="on">스탬프 얻기</button>
-                            <button type="button">스탬프 얻기</button>
-                            <button type="button">스탬프 얻기</button>
-                            <button type="button">스탬프 얻기</button>
+                            <button type="button" onclick="popupOpen('#GetStampPopup');" class="on">스탬프 얻기</button>
+                            <button type="button" onclick="popupOpen('#GetStampPopup');" class="on">스탬프 얻기</button>
+                            <button type="button" onclick="popupOpen('#GetStampPopup');">스탬프 얻기</button>
+                            <button type="button" onclick="popupOpen('#GetStampPopup');">스탬프 얻기</button>
                         </div>
                         <p class="text">스탬프 4개를 받아서 이벤트 부스로 오시면 <b>경품 제공!</b></p>
-                        <button type="button" id="btnGetProductOpen">경품 수령 확인</button>
+                        <!-- 
+                            [전달사항] 스탬프 4종 모두 획득시 경품수령확인 버튼이 보여집니다. 
+                            .show 추가시 block
+                        -->
+                        <button type="button" class="btnGet show" onclick="popupOpen('#GetProductPopup');">경품 수령 확인</button>
                     </div>
                 </div><!-- stampTopBack end -->
                 <div class="stampFront">
@@ -95,6 +99,17 @@
                         </ul>
                         <div class="titleSm"><p>스탬프 경품</p></div>
                         <p class="titleLg"><img src="assets/images/text_productinfo_black.svg" alt="경품 안내"></p>
+                        <!-- [전달사항] 경품 변경예정 -->
+                        <ul class="stampProduct">
+                            <li>
+                                <p class="img"><img src="assets/images/img_stampProduct01.jpg" alt="휴대용 선풍기 이미지"></p>
+                                <p class="text"><span>휴대용 선풍기</span></p>
+                            </li>
+                            <li>
+                                <p class="img"><img src="assets/images/img_stampProduct02.jpg" alt="쿨링 타월 이미지"></p>
+                                <p class="text"><span>쿨링 타월</span></p>
+                            </li>
+                        </ul>
                     </div><!-- stampWrap end -->
                     <div class="mapWrap">
                         <div id="map" style="width: 100%;height: 290px;"></div>
@@ -221,12 +236,27 @@
                 </div><!-- stampFront end -->
             </div><!-- contents end -->
 
-            <div id="GetProductPopup">
-                <div class="GetProductPopupInner">
-                    
-                    <button type="button" class="btnGetProductClose">취소</button>
-                </div><!-- GetProductPopup end -->
-            </div><!-- GetProductPopupInner end -->
+            <div class="popupWrap" id="GetProductPopup">
+                <div class="popupInner">
+                    <h5>스탬프 투어 이벤트</h5>
+                    <p>경품 수령 시 클릭하는 버튼입니다.<br />이용자께서는 취소를 클릭해주세요.</p>
+                    <div class="popupBtnGroup">
+                        <button type="button" class="btnPopupClose" onclick="popupClose('#GetProductPopup');">취소</button>
+                        <button type="button" class="btnPopupCheck">확인</button>
+                    </div>
+                </div><!-- popupInner end -->
+            </div><!-- popupWrap end -->
+
+            <div class="popupWrap" id="GetStampPopup">
+                <div class="popupInner">
+                    <h5>스탬프 투어 이벤트</h5>
+                    <div class="input"><input type="password" title="인증번호 입력" placeholder="인증번호를 입력해주세요."></div>
+                    <div class="popupBtnGroup">
+                        <button type="button" class="btnPopupClose" onclick="popupClose('#GetStampPopup');">취소</button>
+                        <button type="button" class="btnPopupCheck">확인</button>
+                    </div>
+                </div><!-- popupInner end -->
+            </div><!-- popupWrap end -->
             
             <footer>
                 <div class="footerTop">

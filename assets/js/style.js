@@ -73,17 +73,23 @@ $(document).on("click", ".btnStoreView", function () {
     return false;
 });
 
-// 경품 수령 확인
-$(document).on("click", "#btnGetProductOpen", function () {
-    $("#GetProductPopup").fadeIn("400").addClass("active").focus();
-    $(".mWrap").on("scroll touchmove mousewheel", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-    });
-    return false;
-}).on("click", ".btnGetProductClose", function () {
-    $("#GetProductPopup").removeClass("active");
-    $(".mWrap").off("scroll touchmove mousewheel");
-    return false;   
+// 경품 수령 확인 버튼 check
+setInterval(function() { 
+    let btnGetProduct = $(".btnGet");
+    if (btnGetProduct.length) {
+        let btnGetProductIs = btnGetProduct.is(".show");
+        if (btnGetProductIs) {
+            $(".stampFront").css("margin-top", "300px");
+        } else {
+            $(".stampFront").css("margin-top", "250px");
+        }
+    }
 });
+
+// popup
+function popupOpen(openTarget) {
+    $(openTarget).fadeIn("fast").addClass("show");
+}
+function popupClose(closeTarget) {
+    $(closeTarget).fadeOut("fast").removeClass("show");
+}
