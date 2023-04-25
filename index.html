@@ -57,9 +57,62 @@
             </div><!-- gnb end -->
 
             <div id="contents">
-                <div class="mapTopBack">
+                <div class="stampTopBack">
+                    <div class="stampCheckWrap">
+                        <p class="title">매장 이용 후 스탬프를 모아<br /><b>경품을 받아요!</b></p>
+                        <div class="stampGroup">
+                            <!-- [전달사항] 스탬프를 얻었다면 클래스 on 추가 -->
+                            <button type="button" onclick="popupOpen('#GetStampPopup');" class="on">스탬프 얻기</button>
+                            <button type="button" onclick="popupOpen('#GetStampPopup');" class="on">스탬프 얻기</button>
+                            <button type="button" onclick="popupOpen('#GetStampPopup');">스탬프 얻기</button>
+                            <button type="button" onclick="popupOpen('#GetStampPopup');">스탬프 얻기</button>
+                        </div>
+                        <p class="text">스탬프 4개를 받아서 이벤트 부스로 오시면 <b>경품 제공!</b></p>
+                        <!-- 
+                            [전달사항] 스탬프 4종 모두 획득시 경품수령확인 버튼이 보여집니다. 
+                            .show 추가시 block
+                        -->
+                        <button type="button" class="btnGet show" onclick="popupOpen('#GetProductPopup');">경품 수령 확인</button>
+                    </div>
+                </div><!-- stampTopBack end -->
+                <div class="stampFront">
+                    <div class="stampWrap">
+                        <div class="titleSm"><p>스탬프 투어 이벤트</p></div>
+                        <p class="titleLg"><img src="assets/images/text_eventinfo_black.svg" alt="이벤트 정보"></p>
+                        <div class="stampInfo">
+                            <ul>
+                                <li>
+                                    <img src="assets/images/icon_event_method.svg" alt="참여방법 아이콘">
+                                    <strong>참여방법</strong>
+                                    <p>매장 이용 후 카운터<br />직원에게 스탬프를 보여주세요</p>
+                                </li>
+                                <li>
+                                    <img src="assets/images/icon_event_rule.svg" alt="규칙 아이콘">
+                                    <strong>규칙</strong>
+                                    <p>제휴 매장 4곳 이용 후 스탬프를<br />받아서, 이벤트 부스로 오시면<br />경품을 제공 해 드립니다.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="dotList mb50">
+                            <li>매일 선착순 20명에게 제공됩니다.</li>
+                            <li>경품은 아래 장소에서 수령하실 수 있습니다.</li>
+                        </ul>
+                        <div class="titleSm"><p>스탬프 경품</p></div>
+                        <p class="titleLg"><img src="assets/images/text_productinfo_black.svg" alt="경품 안내"></p>
+                        <!-- [전달사항] 경품 변경예정 -->
+                        <ul class="stampProduct">
+                            <li>
+                                <p class="img"><img src="assets/images/img_stampProduct01.jpg" alt="휴대용 선풍기 이미지"></p>
+                                <p class="text"><span>휴대용 선풍기</span></p>
+                            </li>
+                            <li>
+                                <p class="img"><img src="assets/images/img_stampProduct02.jpg" alt="쿨링 타월 이미지"></p>
+                                <p class="text"><span>쿨링 타월</span></p>
+                            </li>
+                        </ul>
+                    </div><!-- stampWrap end -->
                     <div class="mapWrap">
-                        <div id="map" style="width: 100%;height: 500px;"></div>
+                        <div id="map" style="width: 100%;height: 290px;"></div>
                         <button type="button" class="btnMyPosition" onclick="gps_tracking();">내위치</button>
                         <div class="zoomControl">
                             <button type="button" onclick="zoomIn();"><img src="assets/images/icon_plus.svg" alt="확대"></button>
@@ -180,62 +233,30 @@
                             }
                         </script>
                     </div>
-                </div><!-- mapTopBack end -->
-                <div class="mapFront">
-                    <div class="ticketWrap">
-                        <div class="ticketInfo">
-                            <div class="titleSm"><p>응모 횟수가 많을수록 당첨 확률UP!</p></div>
-                            <p class="titleLg"><img src="assets/images/text_eventinfo_pink.svg" alt="이벤트 안내"></p>
-                            <p class="textMd">제휴 매장 이용 후 제휴 매장에서<br /> <span>응모권 수령 하여, 작성</span> 하고 거점 부스내<br /> 응모함에 응모하면 행사 종료 후 추첨을 통해<br /> 당첨자에게 경품을 제공합니다.</p>
-                            <!-- [전달사항] 이미지 변경예정 -->
-                            <div class="ta_c mt20"><img src="assets/images/img_ex.svg" alt=""></div>
-                            <ul>
-                                <li>
-                                    <img src="assets/images/icon_event_pinkmap.svg" alt="장소 아이콘">
-                                    <strong>장소</strong>
-                                    <p>각 제휴 매장</p>
-                                </li>
-                                <li>
-                                    <img src="assets/images/icon_event_pinktime.svg" alt="시간 아이콘">
-                                    <strong>시간</strong>
-                                    <p>매장별 운영 시간</p>
-                                </li>
-                                <li>
-                                    <img src="assets/images/icon_event_pinktarget.svg" alt="참여대상 아이콘">
-                                    <strong>참여대상</strong>
-                                    <p>U+ 모바일 고객</p>
-                                </li>
-                            </ul>
-                        </div><!-- ticketInfo end -->
-                        <div class="ticketSlideWrap">
-                            <div class="titleSm"><p>응모권 이벤트</p></div>
-                            <p class="titleLg"><img src="assets/images/text_productinfo_pink.svg" alt="경품 안내"></p>
-                            <div class="ticketSlide">
-                                <div class="slideItem">
-                                    <span>1 명</span>
-                                    <img src="assets/images/img_ticket_product01.png" alt="엑스박스 이미지">
-                                    <p>엑스박스</p>
-                                </div>
-                                <div class="slideItem">
-                                    <span>2 명</span>
-                                    <img src="assets/images/img_ticket_product02.png" alt="갤럭시워치5 이미지">
-                                    <p>갤럭시워치5</p>
-                                </div>
-                                <div class="slideItem">
-                                    <span>5 명</span>
-                                    <img src="assets/images/img_ticket_product03.png" alt="드롱기 전기포트 이미지">
-                                    <p>드롱기 전기포트</p>
-                                </div>
-                                <div class="slideItem">
-                                    <span>10 명</span>
-                                    <img src="assets/images/img_ticket_product04.png" alt="CGV 골드클래스 티켓 이미지">
-                                    <p>CGV 골드클래스 티켓</p>
-                                </div>
-                            </div>
-                        </div><!-- ticketSlideWrap end -->
-                    </div><!-- ticketWrap end -->
-                </div><!-- mapFront end -->
+                </div><!-- stampFront end -->
             </div><!-- contents end -->
+
+            <div class="popupWrap" id="GetProductPopup">
+                <div class="popupInner">
+                    <h5>스탬프 투어 이벤트</h5>
+                    <p>경품 수령 시 클릭하는 버튼입니다.<br />이용자께서는 취소를 클릭해주세요.</p>
+                    <div class="popupBtnGroup">
+                        <button type="button" class="btnPopupClose" onclick="popupClose('#GetProductPopup');">취소</button>
+                        <button type="button" class="btnPopupCheck">확인</button>
+                    </div>
+                </div><!-- popupInner end -->
+            </div><!-- popupWrap end -->
+
+            <div class="popupWrap" id="GetStampPopup">
+                <div class="popupInner">
+                    <h5>스탬프 투어 이벤트</h5>
+                    <div class="input"><input type="password" title="인증번호 입력" placeholder="인증번호를 입력해주세요."></div>
+                    <div class="popupBtnGroup">
+                        <button type="button" class="btnPopupClose" onclick="popupClose('#GetStampPopup');">취소</button>
+                        <button type="button" class="btnPopupCheck">확인</button>
+                    </div>
+                </div><!-- popupInner end -->
+            </div><!-- popupWrap end -->
             
             <footer>
                 <div class="footerTop">
