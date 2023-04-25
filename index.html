@@ -57,9 +57,47 @@
             </div><!-- gnb end -->
 
             <div id="contents">
-                <div class="mapTopBack">
+                <div class="stampTopBack">
+                    <div class="stampCheckWrap">
+                        <p class="title">매장 이용 후 스탬프를 모아<br /><b>경품을 받아요!</b></p>
+                        <div class="stampGroup">
+                            <!-- [전달사항] 스탬프를 얻었다면 클래스 on 추가 -->
+                            <button type="button" class="on">스탬프 얻기</button>
+                            <button type="button">스탬프 얻기</button>
+                            <button type="button">스탬프 얻기</button>
+                            <button type="button">스탬프 얻기</button>
+                        </div>
+                        <p class="text">스탬프 4개를 받아서 이벤트 부스로 오시면 <b>경품 제공!</b></p>
+                        <button type="button" id="btnGetProductOpen">경품 수령 확인</button>
+                    </div>
+                </div><!-- stampTopBack end -->
+                <div class="stampFront">
+                    <div class="stampWrap">
+                        <div class="titleSm"><p>스탬프 투어 이벤트</p></div>
+                        <p class="titleLg"><img src="assets/images/text_eventinfo_black.svg" alt="이벤트 정보"></p>
+                        <div class="stampInfo">
+                            <ul>
+                                <li>
+                                    <img src="assets/images/icon_event_method.svg" alt="참여방법 아이콘">
+                                    <strong>참여방법</strong>
+                                    <p>매장 이용 후 카운터<br />직원에게 스탬프를 보여주세요</p>
+                                </li>
+                                <li>
+                                    <img src="assets/images/icon_event_rule.svg" alt="규칙 아이콘">
+                                    <strong>규칙</strong>
+                                    <p>제휴 매장 4곳 이용 후 스탬프를<br />받아서, 이벤트 부스로 오시면<br />경품을 제공 해 드립니다.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="dotList mb50">
+                            <li>매일 선착순 20명에게 제공됩니다.</li>
+                            <li>경품은 아래 장소에서 수령하실 수 있습니다.</li>
+                        </ul>
+                        <div class="titleSm"><p>스탬프 경품</p></div>
+                        <p class="titleLg"><img src="assets/images/text_productinfo_black.svg" alt="경품 안내"></p>
+                    </div><!-- stampWrap end -->
                     <div class="mapWrap">
-                        <div id="map" style="width: 100%;height: 500px;"></div>
+                        <div id="map" style="width: 100%;height: 290px;"></div>
                         <button type="button" class="btnMyPosition" onclick="gps_tracking();">내위치</button>
                         <div class="zoomControl">
                             <button type="button" onclick="zoomIn();"><img src="assets/images/icon_plus.svg" alt="확대"></button>
@@ -84,9 +122,7 @@
                         
                             var arr = new Array();
                             // 상점이름, 위도, 경도, 링크주소
-                            arr[0] = ["교촌치킨",37.48234907589072,126.89788715402959,"24769004"];
-                            arr[1] = ["빽다방",37.482829728751376,126.89629512847853,"26532877"];
-                            arr[2] = ["컴포즈커피",37.481046098033865,126.89671309275825,"372588817"];
+                            arr[0] = ["겸품수령장소",37.48234907589072,126.89788715402959,"24769004"];
 
                             var markerTmp;      // 마커
                             var customOverlay;  // 오버레이
@@ -182,20 +218,16 @@
                             }
                         </script>
                     </div>
-                </div><!-- mapTopBack end -->
-                <div class="mapFront">
-                    <div class="storeList">
-                        <div class="storeItem">
-                            <p class="storeThumb"><img src="assets/images/store/tenoclock/img_thumb.jpg" alt=""></p>
-                            <p class="storeName">10 o’ clock</p>
-                            <p class="storeBenefit">1,000원당 100원 할인</p>
-                            <button type="button" class="btnStoreView" onclick="setTimeout(function(){location.href='#';}, 500);">자세히보기</button>
-                        </div>
-                        
-                    </div><!-- storeList end -->
-                </div><!-- mapFront end -->
+                </div><!-- stampFront end -->
             </div><!-- contents end -->
 
+            <div id="GetProductPopup">
+                <div class="GetProductPopupInner">
+                    
+                    <button type="button" class="btnGetProductClose">취소</button>
+                </div><!-- GetProductPopup end -->
+            </div><!-- GetProductPopupInner end -->
+            
             <footer>
                 <div class="footerTop">
                     <div class="footerText">
