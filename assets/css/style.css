@@ -71,7 +71,7 @@
 .rouletterArrow .next{right: -15px;transform: rotate(180deg);}
 .rouletterSlide .slick-list{width: 250px;height: 250px;background-color: #fff;border-radius: 50%;-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);overflow: hidden;}
 .rouletterSlide .slideItem {width: 250px;height: 250px;display: flex;align-items: center;justify-content: center;flex-direction: column;}
-.rouletterSlide .slideItem img{margin: 0 auto;}
+.rouletterSlide .slideItem img{width: 168px;height: 168px;margin: 0 auto;}
 .rouletterSlide .slideItem p{position: relative;display: inline-block;}
 .rouletterSlide .slideItem p:after{content: "";position: absolute;bottom: 2px;left: 0;display: block;width: 100%;height: 6px;background: rgba(104, 93, 255, 0.4);border-radius: 10px;box-sizing: border-box;z-index: 0;}
 .rouletterSlide .slideItem p span{position: relative;padding: 0 3px;font-size: 18px;color: #000000;font-weight: 700;line-height: 22px;text-align: center;letter-spacing: -0.6px;z-index: 1;}

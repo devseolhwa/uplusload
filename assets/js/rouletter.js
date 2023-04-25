@@ -43,16 +43,24 @@ const rRotate = () => {
 const rLayerPopup = (num) => {
     switch (num) {
         case 1:
-            alert("당첨!! 스타벅스 아메리카노");
+            alert("룰렛 상품1이 당첨되었습니다.");
+            break;
+        case 2:
+            alert("룰렛 상품2이 당첨되었습니다.");
             break;
         case 3:
-            alert("당첨!! 햄버거 세트 교환권");
+            alert("룰렛 상품3이 당첨되었습니다.");
+            break;
+        case 3:
+            alert("룰렛 상품4이 당첨되었습니다.");
             break;
         case 5:
-            alert("당첨!! CU 3,000원 상품권");
+            alert("룰렛 상품5이 당첨되었습니다.");
             break;
-        default:
-            alert("꽝! 다음기회에");
+        case 6:
+            alert("룰렛 상품6이 당첨되었습니다.");
+        //default:
+        //    alert("꽝! 다음기회에");
     }
 };
 
