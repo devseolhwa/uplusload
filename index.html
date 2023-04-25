@@ -59,7 +59,7 @@
             <div id="contents">
                 <div class="mapTopBack">
                     <div class="mapWrap">
-                        <div id="map" style="width: 100%;height: 360px;"></div>
+                        <div id="map" style="width: 100%;height: 500px;"></div>
                         <button type="button" class="btnMyPosition" onclick="gps_tracking();">내위치</button>
                         <div class="zoomControl">
                             <button type="button" onclick="zoomIn();"><img src="assets/images/icon_plus.svg" alt="확대"></button>
@@ -84,7 +84,9 @@
                         
                             var arr = new Array();
                             // 상점이름, 위도, 경도, 링크주소
-                            arr[0] = ["겸품수령장소",37.48234907589072,126.89788715402959,"24769004"];
+                            arr[0] = ["교촌치킨",37.48234907589072,126.89788715402959,"24769004"];
+                            arr[1] = ["빽다방",37.482829728751376,126.89629512847853,"26532877"];
+                            arr[2] = ["컴포즈커피",37.481046098033865,126.89671309275825,"372588817"];
 
                             var markerTmp;      // 마커
                             var customOverlay;  // 오버레이
@@ -182,63 +184,18 @@
                     </div>
                 </div><!-- mapTopBack end -->
                 <div class="mapFront">
-                    <div class="rouletterWrap">
-                        <div class="ta_c"><img src="assets/images/tit_roulette.svg" alt="우리동네 멤버쉽 한강대로편 행운룰렛 이벤트"></div>
-                        <div class="rouletterArea">
-                            <div class="rouletterImg">
-                                <!-- [전달사항] 이미지 변경예정 -->
-                                <div class="rouletterEl"><img src="assets/images/img_rouletterEl.png" alt="룰렛이미지"></div>
-                            </div>
-                            <div class="rouletterPin"></div>
-                            <button class="btnRouletter">START</button>
+                    <div class="storeList">
+                        <div class="storeItem">
+                            <p class="storeThumb"><img src="assets/images/store/tenoclock/img_thumb.jpg" alt=""></p>
+                            <p class="storeName">10 o’ clock</p>
+                            <p class="storeBenefit">1,000원당 100원 할인</p>
+                            <button type="button" class="btnStoreView" onclick="setTimeout(function(){location.href='#';}, 500);">자세히보기</button>
                         </div>
-                        <div class="rouletterInfo">
-                            <div class="titleSm"><p><img src="assets/images/icon_star.svg" alt="" class="mr05">기회는 <span>단 1번!</span></p></div>
-                            <p class="titleLg"><img src="assets/images/text_eventinfo_purple.svg" alt="이벤트 안내"></p>
-                            <p class="textMd">룰렛을 돌려서 <br /><span>화살표가 멈춘 영역의 경품</span>을 드립니다.</p>
-                            <ul>
-                                <li>
-                                    <img src="assets/images/icon_event_purplemap.svg" alt="장소 아이콘">
-                                    <strong>장소</strong>
-                                    <p>이벤트 부스</p>
-                                </li>
-                                <li>
-                                    <img src="assets/images/icon_event_purpletime.svg" alt="시간 아이콘">
-                                    <strong>시간</strong>
-                                    <p>11:30~13:30<br>17:30~19:00</p>
-                                </li>
-                                <li>
-                                    <img src="assets/images/icon_event_purpletarget.svg" alt="참여대상 아이콘">
-                                    <strong>참여대상</strong>
-                                    <p>LG U+모바일을<br>이용하는 모든 고객</p>
-                                </li>
-                            </ul>
-                        </div><!-- rouletterInfo end -->
-                        <div class="rouletterSlideWrap">
-                            <div class="titleSm"><p>룰렛 이벤트</p></div>
-                            <p class="titleLg"><img src="assets/images/text_productinfo_purple.svg" alt="경품 안내"></p>
-                            <div class="rouletterSlideGroup">
-                                <div class="rouletterArrow">
-                                    <button type="button" class="prev">Prev</button>
-                                    <button type="button" class="next">Next</button>
-                                </div>
-                                <!-- [전달사항] 이미지 변경예정 -->
-                                <div class="rouletterSlide">
-                                    <div class="slideItem">
-                                        <img src="assets/images/img_rouletter_product01.png" alt="카카오 스티커 이미지">
-                                        <p><span>카카오 스티커</span></p>
-                                    </div>
-                                    <div class="slideItem">
-                                        <img src="assets/images/img_rouletter_product01.png" alt="휴대용 선풍기 이미지">
-                                        <p><span>휴대용 선풍기</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- rouletterSlideGroup end -->
-                        </div><!-- rouletterSlideWrap end -->
-                    </div><!-- rouletterWrap end -->
+                        
+                    </div><!-- storeList end -->
                 </div><!-- mapFront end -->
             </div><!-- contents end -->
-            
+
             <footer>
                 <div class="footerTop">
                     <div class="footerText">

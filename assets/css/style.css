@@ -61,7 +61,7 @@
 .rouletterInfo ul{position: relative;display: flex;align-items: flex-start;justify-content: space-between;margin-top: 26px;border-top: 1px solid rgba(255, 255, 255, 0.3);border-bottom: 1px solid rgba(255, 255, 255, 0.3);box-sizing: border-box;}
 .rouletterInfo ul:before{content: "";position: absolute;top: 0;left: 33.3%;display: block;width: 1px;height: 100%;background-color: rgba(34, 34, 34, 0.1);border-radius: 30px;}
 .rouletterInfo ul:after{content: "";position: absolute;top: 0;left: 66.6%;display: block;width: 1px;height: 100%;background-color: rgba(34, 34, 34, 0.1);border-radius: 30px;}
-.rouletterInfo ul li{flex: 1;display: flex;justify-content: center;flex-direction: column;flex-wrap: wrap;margin: 10px 0 5px;padding: 0 5px;box-sizing: border-box;text-align: center;}
+.rouletterInfo ul li{flex: 1;display: flex;justify-content: center;flex-direction: column;flex-wrap: wrap;align-items: center;margin: 10px 0 5px;padding: 0 5px;box-sizing: border-box;text-align: center;}
 .rouletterInfo ul li strong{margin-top: 9px;font-size: 15px;color: #222;font-weight: 700;line-height: 26px;letter-spacing: -0.6px;}
 .rouletterInfo ul li p{margin-top: 4px;font-size: 13px;color: #383838;font-weight: 400;line-height: 18px;letter-spacing: -0.6px;word-break: keep-all;}
 .rouletterSlideWrap{margin: 38px 0 0;}
@@ -102,12 +102,13 @@
 
 /* stamp */
 .stampTopBack{position: fixed;width: 100%;height: 100%;top: 0;bottom: 0;left: 0;right: 0;z-index: 0;}
-.stampTopBack .stampCheckWrap{position: absolute;left: calc(50vw + 0px);top: 0;width: 100%;max-width: 390px;height: 320px;padding-top: 70px;background-image: url(../images/bg_stampCheck.jpg);background-size: cover;background-position: bottom center;background-repeat: no-repeat;box-sizing: border-box;}
+.stampTopBack .stampCheckWrap{position: absolute;left: calc(50vw + 0px);top: 0;width: 100%;max-width: 390px;height: 370px;padding-top: 70px;background-image: url(../images/bg_stampCheck.jpg);background-size: cover;background-position: bottom center;background-repeat: no-repeat;box-sizing: border-box;}
 .stampTopBack + .stampFront{position: relative;margin-top: 250px;z-index: 1;}
 .stampCheckWrap .stampCheckInner{padding: 20px 20px;}
 .stampCheckWrap .title{margin-top: 29px;font-size: 18px;color: #fff;font-weight: 400;line-height: 24px;text-align: center;letter-spacing: -0.6px;}
 .stampCheckWrap .title b{font-size: 20px;color: #FF0097;font-weight: 800;}
 .stampCheckWrap .text{font-size: 13px;color: #fff;font-weight: 400;line-height: 18px;text-align: center;letter-spacing: -0.6px;}
+#btnGetProductOpen{display: block;width: 150px;height: 40px;margin: 22px auto 25px;background: #FFFFFF;border: 1px solid #FF0097;border-radius: 10px;box-sizing: border-box;font-size: 13px;color: #FF0097;font-weight: 700;line-height: 24px;letter-spacing: -0.6px;text-align: center;}
 .stampCheckWrap .text b{font-weight: 700;}
 .stampCheckWrap .stampGroup{display: flex;justify-content: space-between;align-items: center;flex-direction: row;padding: 25px;box-sizing: border-box;}
 .stampCheckWrap .stampGroup button{position: relative;display: block;width: 70px;height: 70px;background-image: url(../images/img_stamp.svg);background-position: center;background-repeat: no-repeat;overflow: hidden;text-indent: -9999px;white-space: nowrap;}
