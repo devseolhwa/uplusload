@@ -47,7 +47,7 @@
 .storeList .storeItem.on .storeName, .storeList .storeItem.on .storeBenefit{color: #fff;}
 
 /* rouletter */
-.rouletterWrap{position: relative;padding: 44px 16px 38px;background-image: url(../images/bg_rouletter.jpg);background-repeat: repeat;background-position: top center;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);box-sizing: border-box;}
+.rouletterWrap{position: relative;padding: 44px 16px 38px;background-image: url(../images/bg_rouletter.svg);background-repeat: repeat;background-position: top center;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);box-sizing: border-box;}
 .rouletterWrap:before{content: "";display: block;position: absolute;top: 15px;left: 50%;transform: translate(-50%, 0%);width: 100px;height: 5px;background: #fff;border-radius: 15px;}
 .rouletterArea{position: relative;margin: 42px 0 133px;}
 .rouletterArea:before{content: "";position: absolute;bottom: -70px;left: 50%;transform: translate(-50%, 0);display: block;width: 290px;height: 105px;background-image: url(../images/img_rouletterEl_bottom.png);background-repeat: repeat;background-position: top center;z-index: 0;}
