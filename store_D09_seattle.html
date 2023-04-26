@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U+로드_시애틀 에스프레소</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+
+    <div id="skipNav">
+        <a href="#contents">본문바로가기</a>
+        <a href="#btnGnbOpen">메뉴바로가기</a>
+    </div>
+
+    <div class="wrap">
+        <div class="pcWrap"></div>
+        <div class="mWrap">
+            <header>
+                <div class="headerWrap">
+                    <h1 class="logo">
+                        <a href="/" title="메인페이지로">
+                            <img src="assets/images/logo.svg" alt="U+로드" class="off">
+                            <img src="assets/images/logo_fix.svg" alt="U+로드" class="on">
+                        </a>
+                    </h1>
+                    <button type="button" id="btnGnbOpen">메뉴열기</button>
+                </div>
+            </header>
+
+            <div id="gnb">
+                <div class="gnbInner">
+                    <div class="gnbTop">
+                        <a href="/" title="메인페이지로" class="gnbLogo">
+                            <img src="assets/images/logo.svg" alt="U+로드">
+                        </a>
+                        <ul class="snsGroup">
+                            <li><a href="#" class="facebook">페이스북</a></li>
+                            <li><a href="#" class="instagram">인스타그램</a></li>
+                        </ul>
+                    </div>
+                    <ul>
+                        <li><a href="#">매장소개</a></li>
+                        <li><a href="#">응모권 이벤트</a></li>
+                        <li><a href="#">룰렛 이벤트</a></li>
+                        <li><a href="#">스탬프 투어</a></li>
+                        <li><a href="#">유플러스 로드 소개</a></li>
+                    </ul>
+                    <button type="button" id="btnGnbClose">메뉴닫기</button>
+                </div><!-- gnbInner end -->
+            </div><!-- gnb end -->
+
+            <div id="contents">
+                <div class="mapWrap">
+                    <div id="map" style="width: 100%;height: 290px;"></div>
+                    <button type="button" class="btnMyPosition" onclick="gps_tracking();">내위치</button>
+                    <div class="zoomControl">
+                        <button type="button" onclick="zoomIn();"><img src="assets/images/icon_plus.svg" alt="확대"></button>
+                        <button type="button" onclick="zoomOut();"><img src="assets/images/icon_minus.svg" alt="축소"></button>
+                    </div>
+                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d33f98f36ac24cf4e5878e94b8c8fad9"></script>
+                    <script>
+                        var mapContainer = document.getElementById("map"), // 지도를 표시할 div 
+                            mapOption = { 
+                                center: new kakao.maps.LatLng(37.52501589586262, 126.9633693574897), // 지도의 중심좌표
+                                level: 2 // 지도의 확대 레벨
+                            };
+                        
+                        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                        
+                        var imageSrc = "assets/images/icon_pin.svg";                // 마커이미지 주소
+                            imageSize = new kakao.maps.Size(36, 41);                // 마커이미지의 크기
+                            imageOption = {offset: new kakao.maps.Point(18, 41)};   // 마커의 좌표와 일치시킬 이미지 안에서의 좌표설정
+                            
+                        // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+                        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+                    
+                        var arr = new Array();
+                        // 상점이름, 위도, 경도, 링크주소
+                        arr[0] = ["시애틀 에스프레소",37.52501589586262,126.9633693574897,"27494872"];
+
+                        var markerTmp;      // 마커
+                        var customOverlay;  // 오버레이
+                        var contentStr;
+                        
+                        for (var i=0;i<arr.length;i++) {
+                            markerTmp = new daum.maps.Marker({
+                                position: new daum.maps.LatLng(arr[i][1],arr[i][2]),
+                                title: arr[i][0],
+                                image: markerImage,
+                                map:map
+                            });
+                        
+                            contentStr = "<div class='storePin'><a href='https://map.kakao.com/link/map/"+ arr[i][3] +"' target='_blank'><span class='name'>"+ arr[i][0] +"</span></a></div>";
+                        
+                            customOverlay = new kakao.maps.CustomOverlay({
+                                map: map,
+                                position: new daum.maps.LatLng(arr[i][1],arr[i][2]),
+                                content: contentStr,
+                                yAnchor: 1 
+                            });
+                        }
+                        
+                        // 지도 확대, 축소
+                        function zoomIn() {
+                            map.setLevel(map.getLevel() - 1);
+                        }
+                        function zoomOut() {
+                            map.setLevel(map.getLevel() + 1);
+                        }
+
+                        // 내 위치 스크립트 시작
+                        var gps_use = null; //gps의 사용가능 여부
+                        var gps_lat = null; // 위도
+                        var gps_lng = null; // 경도
+                        var gps_position; // gps 위치 객체
+                        var beforeOverlay = [];
+
+                        gps_check();
+                        // gps가 이용가능한지 체크하는 함수이며, 이용가능하다면 show location 함수를 불러온다.
+                        // 만약 작동되지 않는다면 경고창을 띄우고, 에러가 있다면 errorHandler 함수를 불러온다.
+                        // timeout을 통해 시간제한을 둔다.
+                        function gps_check(){
+                            if (navigator.geolocation) {
+                                var options = {timeout:60000};
+                                navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+                            } else {
+                                alert("GPS_추적이 불가합니다.");
+                                gps_use = false;
+                            }
+                        }
+
+                        // gps 이용 가능 시, 위도와 경도를 반환하는 showlocation함수.
+                        function showLocation(position) {
+                            gps_use = true;
+                            gps_lat = position.coords.latitude;
+                            gps_lng = position.coords.longitude;
+                        }
+
+                        // error발생 시 에러의 종류를 알려주는 함수.
+                        function errorHandler(error) {
+                            if(error.code == 1) {
+                                alert("설정에서 나의 위치를 공유하기로 변경해주세요.");
+                            } else if(err.code == 2) {
+                                alert("위치를 반환할 수 없습니다.");
+                            }
+                            gps_use = false;
+                        }
+                        function gps_tracking(){
+                            removeBeforeOverlay();
+                            if (gps_use) {
+                                map.panTo(new kakao.maps.LatLng(gps_lat,gps_lng));
+                                var gps_content = "<div class='myPosition'><img unselectable='on' src='assets/images/myPositionPin.svg' alt=''></div>";
+                                var currentOverlay = new kakao.maps.CustomOverlay({
+                                    position: new kakao.maps.LatLng(gps_lat,gps_lng),
+                                    content: gps_content,
+                                    map: map
+                                });
+                                currentOverlay.setMap(map);
+                                beforeOverlay.push(currentOverlay);
+
+                                return currentOverlay;
+                            } else {
+                                alert("접근차단하신 경우 새로고침, 아닌 경우 잠시만 기다려주세요.");
+                                gps_check();
+                            }
+                        }
+                        function removeBeforeOverlay() {
+                            for ( var i = 0; i < beforeOverlay.length; i++ ) {
+                                beforeOverlay[i].setMap(null);
+                            }   
+                            beforeOverlay = [];
+                        }
+                    </script>
+                </div>
+                <!-- [전달사항] 매장별 bg가 다르기 때문에 .storeSlideWrap에 추가로 매장별 클래스명 부여 필요 -->
+                <div class="storeSlideWrap store_D09">
+                    <h3 class="storeName">시애틀 에스프레소</h3>
+                    <p class="storeAddress">서울 용산구 한강대로11길 4</p>
+                    <div class="storeSlide">
+                        <div class="slideItem"><img src="assets/images/store/store_D09/img_slide01.png" alt="시애틀에스프레소 사진"></div>
+                        <div class="slideItem"><img src="assets/images/store/store_D09/img_slide02.png" alt="시애틀에스프레소 사진"></div>
+                        <div class="slideItem"><img src="assets/images/store/store_D09/img_slide03.png" alt="시애틀에스프레소 사진"></div>
+                        <div class="slideItem"><img src="assets/images/store/store_D09/img_slide04.png" alt="시애틀에스프레소 사진"></div>
+                        <div class="slideItem"><img src="assets/images/store/store_D09/img_slide05.png" alt="시애틀에스프레소 사진"></div>
+                    </div>
+                    <ul class="storeInfo">
+                        <li>
+                            <img src="assets/images/icon_store_time.svg" alt="영업시간 아이콘">
+                            <strong>영업시간</strong>
+                            <p>월~금(07:30~20:00)<br>토~일(10:00~19:00)</p>
+                        </li>
+                        <li>
+                            <img src="assets/images/icon_store_calendar.svg" alt="휴일 아이콘">
+                            <strong>휴일</strong>
+                            <p>-</p>
+                        </li>
+                        <li>
+                            <img src="assets/images/icon_store_benefit.svg" alt="혜택 아이콘">
+                            <strong>매장내 혜택</strong>
+                            <p>음료 주문 시 아메리카노 1잔 무료</p>
+                        </li>
+                    </ul>
+                    <div class="scrollDown">
+                        <p>Scroll Down</p>
+                        <i><span class="blind">스크롤아이콘</span></i>
+                    </div>
+                </div><!-- storeSlideWrap end -->
+                <div class="storeDetails">
+                    <!-- [전달사항] details type 총 3타입 detailsType01 / detailsType02 / detailsType03 으로 구분 -->
+                    <div class="detailsType01">
+                        <img src="assets/images/store/store_D09/img_details01.png" alt="">
+                        <p class="detailsTitle">빵과 토끼가 만나게 된다면?<br>빵 굽는 토끼의 아지트 <빵앗간 토끼>를 소개한다.</p>
+                        <p class="detailsText">
+                            용리단길을 걷다 보면 동화 속에서나 볼 법한 깜찍한 장소가 등장한다.<br><br>
+                            앞치마를 두른 토끼가 매력적인 빵앗간 토끼는 세계 각국의 이웃 토끼들을 모두 초대하겠다는 원대한 야망을 꿈꾸며 오늘도 빵과 디저트를 구워내고 있다.
+                            
+                        </p>
+                    </div><!-- detailsType01 end -->
+                    <div class="detailsType02">
+                        <img src="assets/images/store/store_D09/img_details02.png" alt="">
+                        <p class="detailsTitle">빵앗간 토끼의 인테리어를 설명하자면 두말할 것 없이 토끼다.</p>
+                        <p class="detailsText">
+                           무수한 토끼들과 토끼들… 눈 닿는 곳곳에 토끼와 관련된 소품들이 가득하다.<br><br>
+                            알록달록 먹음직스러운 디저트와 빵까지 사랑스럽지 않은 것이 없는 이곳은 토끼들의 아지트라고 할 수 있겠다.
+                        </p>
+                    </div><!-- detailsType02 end -->
+                    
+                    <!-- [전달사항] .scrollLeft 태그에 업체별 이름입력 -->
+                    <div class="scrollLeft">The Miller Rabbit</div>
+                    
+                    <div class="detailsType03">
+                        <img src="assets/images/store/store_D09/img_details03.png" alt="">
+                        <p class="detailsTitle">빵앗간 토끼에서는 인테리어 컨셉만큼 독특한 디저트를 만날 수 있다.</p>
+                        <p class="detailsText">
+                           귀여운 생김새로 먹기 전에 눈부터 즐거워지는 토끼당근 파운드케이크가 이곳의 시그니처 메뉴이다.<br><br>
+
+                           현미, 약과 등 전통적인 재료를 이용해 쫀쫀한 식감을 자랑하는 휘낭시에와 바싹한 소금빵도 놓칠 수 없다.
+                        </p>
+                    </div>
+                </div><!-- storeDetails end -->
+            </div><!-- contents end -->
+
+            <footer>
+                <div class="footerTop">
+                    <div class="footerText">
+                        <h2>㈜엘지유플러스</h2>
+                        <p class="address">서울특별시 용산구 한강대로 32</p>
+                    </div>
+                    <ul class="snsGroup">
+                        <li><a href="#" class="facebook">페이스북</a></li>
+                        <li><a href="#" class="instagram">인스타그램</a></li>
+                    </ul>
+                </div>
+                <ul class="footerInfo">
+                    <li>대표이사<span>황현식</span></li>
+                    <li>통신판매업신고<span>제 2015-서울용산-00481호</span></li>
+                    <li>
+                        사업자등록번호<span>220-81-39938</span>
+                        <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2208139938" target="_blank" title="새창열림">사업자 정보 확인</a>
+                    </li>
+                    <li>고객센터<span>[휴대폰] 휴대폰에서 101 (무료)</span></li>
+                </ul>
+                <p class="copyright">Copyright ⓒ 2023 <span>LG Uplus Corp.</span> All rights reserved.</p>
+            </footer>
+            
+            <button type="button" id="btnTop">상단으로 가기</button>
+        </div><!-- mWrap end -->
+    </div><!-- wrap end -->
+
+    <script src="assets/js/lib/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="assets/js/lib/slick.min.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/style.js"></script>
+    <script src="assets/js/rouletter.js"></script>
+
+</body>
+</html>

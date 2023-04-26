@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U+로드_드포레</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+
+    <div id="skipNav">
+        <a href="#contents">본문바로가기</a>
+        <a href="#btnGnbOpen">메뉴바로가기</a>
+    </div>
+
+    <div class="wrap">
+        <div class="pcWrap"></div>
+        <div class="mWrap">
+            <header>
+                <div class="headerWrap">
+                    <h1 class="logo">
+                        <a href="/" title="메인페이지로">
+                            <img src="assets/images/logo.svg" alt="U+로드" class="off">
+                            <img src="assets/images/logo_fix.svg" alt="U+로드" class="on">
+                        </a>
+                    </h1>
+                    <button type="button" id="btnGnbOpen">메뉴열기</button>
+                </div>
+            </header>
+
+            <div id="gnb">
+                <div class="gnbInner">
+                    <div class="gnbTop">
+                        <a href="/" title="메인페이지로" class="gnbLogo">
+                            <img src="assets/images/logo.svg" alt="U+로드">
+                        </a>
+                        <ul class="snsGroup">
+                            <li><a href="#" class="facebook">페이스북</a></li>
+                            <li><a href="#" class="instagram">인스타그램</a></li>
+                        </ul>
+                    </div>
+                    <ul>
+                        <li><a href="#">매장소개</a></li>
+                        <li><a href="#">응모권 이벤트</a></li>
+                        <li><a href="#">룰렛 이벤트</a></li>
+                        <li><a href="#">스탬프 투어</a></li>
+                        <li><a href="#">유플러스 로드 소개</a></li>
+                    </ul>
+                    <button type="button" id="btnGnbClose">메뉴닫기</button>
+                </div><!-- gnbInner end -->
+            </div><!-- gnb end -->
+
+            <div id="contents">
+                <div class="mapWrap">
+                    <div id="map" style="width: 100%;height: 290px;"></div>
+                    <button type="button" class="btnMyPosition" onclick="gps_tracking();">내위치</button>
+                    <div class="zoomControl">
+                        <button type="button" onclick="zoomIn();"><img src="assets/images/icon_plus.svg" alt="확대"></button>
+                        <button type="button" onclick="zoomOut();"><img src="assets/images/icon_minus.svg" alt="축소"></button>
+                    </div>
+                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d33f98f36ac24cf4e5878e94b8c8fad9"></script>
+                    <script>
+                        var mapContainer = document.getElementById("map"), // 지도를 표시할 div 
+                            mapOption = { 
+                                center: new kakao.maps.LatLng(37.526068440325034, 126.9639344876214), // 지도의 중심좌표
+                                level: 2 // 지도의 확대 레벨
+                            };
+                        
+                        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                        
+                        var imageSrc = "assets/images/icon_pin.svg";                // 마커이미지 주소
+                            imageSize = new kakao.maps.Size(36, 41);                // 마커이미지의 크기
+                            imageOption = {offset: new kakao.maps.Point(18, 41)};   // 마커의 좌표와 일치시킬 이미지 안에서의 좌표설정
+                            
+                        // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+                        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+                    
+                        var arr = new Array();
+                        // 상점이름, 위도, 경도, 링크주소
+                        arr[0] = ["드포레",37.526068440325034,126.9639344876214,"1743337422"];
+
+                        var markerTmp;      // 마커
+                        var customOverlay;  // 오버레이
+                        var contentStr;
+                        
+                        for (var i=0;i<arr.length;i++) {
+                            markerTmp = new daum.maps.Marker({
+                                position: new daum.maps.LatLng(arr[i][1],arr[i][2]),
+                                title: arr[i][0],
+                                image: markerImage,
+                                map:map
+                            });
+                        
+                            contentStr = "<div class='storePin'><a href='https://map.kakao.com/link/map/"+ arr[i][3] +"' target='_blank'><span class='name'>"+ arr[i][0] +"</span></a></div>";
+                        
+                            customOverlay = new kakao.maps.CustomOverlay({
+                                map: map,
+                                position: new daum.maps.LatLng(arr[i][1],arr[i][2]),
+                                content: contentStr,
+                                yAnchor: 1 
+                            });
+                        }
+                        
+                        // 지도 확대, 축소
+                        function zoomIn() {
+                            map.setLevel(map.getLevel() - 1);
+                        }
+                        function zoomOut() {
+                            map.setLevel(map.getLevel() + 1);
+                        }
+
+                        // 내 위치 스크립트 시작
+                        var gps_use = null; //gps의 사용가능 여부
+                        var gps_lat = null; // 위도
+                        var gps_lng = null; // 경도
+                        var gps_position; // gps 위치 객체
+                        var beforeOverlay = [];
+
+                        gps_check();
+                        // gps가 이용가능한지 체크하는 함수이며, 이용가능하다면 show location 함수를 불러온다.
+                        // 만약 작동되지 않는다면 경고창을 띄우고, 에러가 있다면 errorHandler 함수를 불러온다.
+                        // timeout을 통해 시간제한을 둔다.
+                        function gps_check(){
+                            if (navigator.geolocation) {
+                                var options = {timeout:60000};
+                                navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+                            } else {
+                                alert("GPS_추적이 불가합니다.");
+                                gps_use = false;
+                            }
+                        }
+
+                        // gps 이용 가능 시, 위도와 경도를 반환하는 showlocation함수.
+                        function showLocation(position) {
+                            gps_use = true;
+                            gps_lat = position.coords.latitude;
+                            gps_lng = position.coords.longitude;
+                        }
+
+                        // error발생 시 에러의 종류를 알려주는 함수.
+                        function errorHandler(error) {
+                            if(error.code == 1) {
+                                alert("설정에서 나의 위치를 공유하기로 변경해주세요.");
+                            } else if(err.code == 2) {
+                                alert("위치를 반환할 수 없습니다.");
+                            }
+                            gps_use = false;
+                        }
+                        function gps_tracking(){
+                            removeBeforeOverlay();
+                            if (gps_use) {
+                                map.panTo(new kakao.maps.LatLng(gps_lat,gps_lng));
+                                var gps_content = "<div class='myPosition'><img unselectable='on' src='assets/images/myPositionPin.svg' alt=''></div>";
+                                var currentOverlay = new kakao.maps.CustomOverlay({
+                                    position: new kakao.maps.LatLng(gps_lat,gps_lng),
+                                    content: gps_content,
+                                    map: map
+                                });
+                                currentOverlay.setMap(map);
+                                beforeOverlay.push(currentOverlay);
+
+                                return currentOverlay;
+                            } else {
+                                alert("접근차단하신 경우 새로고침, 아닌 경우 잠시만 기다려주세요.");
+                                gps_check();
+                            }
+                        }
+                        function removeBeforeOverlay() {
+                            for ( var i = 0; i < beforeOverlay.length; i++ ) {
+                                beforeOverlay[i].setMap(null);
+                            }   
+                            beforeOverlay = [];
+                        }
+                    </script>
+                </div>
+                <!-- [전달사항] 매장별 bg가 다르기 때문에 .storeSlideWrap에 추가로 매장별 클래스명 부여 필요 -->
+                <div class="storeSlideWrap store_D02">
+                    <h3 class="storeName">드포레 와인&비스트로</h3>
+                    <p class="storeAddress">서울 용산구 한강대로15길 8-3 1층</p>
+                    <div class="storeSlide">
+                        <div class="slideItem"><img src="assets/images/store/store_D02/img_slide01.png" alt="드포레 사진"></div>
+                        <div class="slideItem"><img src="assets/images/store/store_D02/img_slide02.png" alt="드포레 사진"></div>
+                        <div class="slideItem"><img src="assets/images/store/store_D02/img_slide03.png" alt="드포레 사진"></div>
+                        <div class="slideItem"><img src="assets/images/store/store_D02/img_slide04.png" alt="드포레 사진"></div>
+                        <div class="slideItem"><img src="assets/images/store/store_D02/img_slide05.png" alt="드포레 사진"></div>
+                        <div class="slideItem"><img src="assets/images/store/store_D02/img_slide06.png" alt="드포레 사진"></div>
+                        <div class="slideItem"><img src="assets/images/store/store_D02/img_slide07.png" alt="드포레 사진"></div>
+                        <div class="slideItem"><img src="assets/images/store/store_D02/img_slide08.png" alt="드포레 사진"></div>
+                        <div class="slideItem"><img src="assets/images/store/store_D02/img_slide09.png" alt="드포레 사진"></div>
+                    </div>
+                    <ul class="storeInfo">
+                        <li>
+                            <img src="assets/images/icon_store_time.svg" alt="영업시간 아이콘">
+                            <strong>영업시간</strong>
+                            <p>17:00~24:00</p>
+                        </li>
+                        <li>
+                            <img src="assets/images/icon_store_calendar.svg" alt="휴일 아이콘">
+                            <strong>휴일</strong>
+                            <p>-</p>
+                        </li>
+                        <li>
+                            <img src="assets/images/icon_store_benefit.svg" alt="혜택 아이콘">
+                            <strong>매장내 혜택</strong>
+                            <p>1테이블당 결제금액의<br>40% 할인<span>1테이블당 결제금액<br>기준 최대 20만원 </span></p>
+                        </li>
+                    </ul>
+                    <div class="scrollDown">
+                        <p>Scroll Down</p>
+                        <i><span class="blind">스크롤아이콘</span></i>
+                    </div>
+                </div><!-- storeSlideWrap end -->
+                <div class="storeDetails">
+                    <!-- [전달사항] details type 총 3타입 detailsType01 / detailsType02 / detailsType03 으로 구분 -->
+                    <div class="detailsType01">
+                        <img src="assets/images/store/store_D02/img_details01.png" alt="">
+                        <p class="detailsTitle">세월의 향기를 담고 있는 와인바 <br><드포레 와인&비스트로>를 소개한다.</p>
+                        <p class="detailsText">
+                            숲과 나무가 없어진다는 “Deforest”에 어원을 둔 드포레는 도심 속 숲을 모티브로 삼고 있다.<br>
+
+숲이 주는 아늑함 속에서 와인의 향기를 느껴보는 것은 꽤나 특별한 경험일 것이다.<br><br>
+
+드포레가 자리잡은 용산역 근처의 거리는 재개발과 함께 추억속으로 사라질 예정이니, 와인을 좋아하는 사람이라면 늦기 전에 방문해 보길 권한다.
+
+                        </p>
+                    </div><!-- detailsType01 end -->
+                    <div class="detailsType02">
+                        <img src="assets/images/store/store_D02/img_details02.png" alt="">
+                        <p class="detailsTitle">곳곳에 장식된 식물들의 싱그러움 가운데 자연광을 활용한 인테리어는<br>마치 숲을 거니는 것 같다.</p>
+                        <p class="detailsText">
+                            밤이 되면 은은한 조명이 더해져 동화속 숲처럼 몽환적이고 로맨틱한 분위기가 연출된다. <br><br>
+
+                            테이블 사이의 거리는 옆자리에 방해받지 않고 이야기를 나눌 수 있을 만큼 넓고, 단체석도 준비되어 있어 다양한 상황에서 드포레만의 독특한 분위기 속에서 와인을 즐길 수 있다.
+                        </p>
+                    </div><!-- detailsType02 end -->
+                    
+                    <!-- [전달사항] .scrollLeft 태그에 업체별 이름입력 -->
+                    <div class="scrollLeft">de;fore</div>
+                    
+                    <div class="detailsType03">
+                        <img src="assets/images/store/store_D02/img_details03.png" alt="">
+                        <p class="detailsTitle">좋은 술은 좋은 음식과 함께할 때 풍미를 더한다.</p>
+                        <p class="detailsText">
+                            드포레에는 와인의 맛과 향기를 한층 끌어올려줄 다양한 메뉴가 준비되어 있다.<br><br>
+
+                            특히 부드러운 육질이 일품인 부채살 스테이크는 <br> 드포레가 자랑하는 베스트 메뉴 중 하나.<br>
+                            소중한 사람과 함께라면 후회 없는 선택이 될 것이다.
+                        </p>
+                    </div>
+                    <div class="detailsType03">
+                        <img src="assets/images/store/store_D02/img_details04.png" alt="">
+                        <p class="detailsTitle">와인의 향기만이 아닌 숲의 따듯한 감성을 함께 마실 수 있는 드포레.</p>
+                        <p class="detailsText">
+                            재개발이 예정된 탓에 드포레 역시 몇 년 뒤면 세월의 흐름 속으로 사라지고 우리의 추억속에만 남아있게 되었다.<br><br>
+
+                            와인을 사랑하는 사람이라면, 소중한 사람이 있다면 늦기 전에 드포레만의 독특한 분위기 속에서 특별한 기억을 남겨보는 건 어떨까.
+                        </p>
+                    </div>
+                </div><!-- storeDetails end -->
+            </div><!-- contents end -->
+
+            <footer>
+                <div class="footerTop">
+                    <div class="footerText">
+                        <h2>㈜엘지유플러스</h2>
+                        <p class="address">서울특별시 용산구 한강대로 32</p>
+                    </div>
+                    <ul class="snsGroup">
+                        <li><a href="#" class="facebook">페이스북</a></li>
+                        <li><a href="#" class="instagram">인스타그램</a></li>
+                    </ul>
+                </div>
+                <ul class="footerInfo">
+                    <li>대표이사<span>황현식</span></li>
+                    <li>통신판매업신고<span>제 2015-서울용산-00481호</span></li>
+                    <li>
+                        사업자등록번호<span>220-81-39938</span>
+                        <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2208139938" target="_blank" title="새창열림">사업자 정보 확인</a>
+                    </li>
+                    <li>고객센터<span>[휴대폰] 휴대폰에서 101 (무료)</span></li>
+                </ul>
+                <p class="copyright">Copyright ⓒ 2023 <span>LG Uplus Corp.</span> All rights reserved.</p>
+            </footer>
+            
+            <button type="button" id="btnTop">상단으로 가기</button>
+        </div><!-- mWrap end -->
+    </div><!-- wrap end -->
+
+    <script src="assets/js/lib/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="assets/js/lib/slick.min.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/style.js"></script>
+    <script src="assets/js/rouletter.js"></script>
+
+</body>
+</html>
