@@ -16,23 +16,30 @@ $(document).on("click", "#btnGnbOpen", function () {
 // scroll
 let header = document.querySelector("header"),
     btnTop = document.querySelector("#btnTop"),
+    contents = document.querySelector("#contents"), //쿠폰받기추가
     storeDetails = document.querySelectorAll(".storeDetails"),
     headerH = 70;
 
 window.addEventListener("scroll", () => {
+    let btnGetCoupon = document.querySelector(".btnGetCoupon"); //쿠폰받기추가
     if (window.scrollY > headerH) {
         header.classList.add("fixed");
         btnTop.classList.add("show");
+        btnGetCoupon?.classList.add("show"); //쿠폰받기추가
     } else {
         header.classList.remove("fixed");
         btnTop.classList.remove("show");
+        btnGetCoupon?.classList.remove("show"); //쿠폰받기추가
     }
 });
 window.addEventListener("load", function() {
     // storeview 페이지에만 progress 삽입
     if (storeDetails.length) {
         let progressHtml = "<div class='progress'><div class='bar'></div></div>";
+        let couponHtml = "<button type='button' class='btnGetCoupon' onclick='window.open(`https://bit.ly/41oHPYv`)'>쿠폰 받기</button>"; //쿠폰받기추가
         header.insertAdjacentHTML("beforeend", progressHtml);
+        contents.insertAdjacentHTML("beforeend", couponHtml); //쿠폰받기추가
+        btnTop.style["bottom"] = "90px"; //쿠폰받기추가
     }
     window.addEventListener("scroll", function() {
         var wintop = window.pageYOffset || document.documentElement.scrollTop,

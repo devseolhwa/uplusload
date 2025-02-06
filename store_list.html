@@ -65,7 +65,7 @@
                             <button type="button" onclick="zoomIn();"><img src="assets/images/icon_plus.svg" alt="확대"></button>
                             <button type="button" onclick="zoomOut();"><img src="assets/images/icon_minus.svg" alt="축소"></button>
                         </div>
-                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d33f98f36ac24cf4e5878e94b8c8fad9"></script>
+                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=63ae04bf1f6dcf53ca5bd7accedf7ab2"></script>
                         <script>
                             var mapContainer = document.getElementById("map"), // 지도를 표시할 div 
                                 mapOption = { 
@@ -185,12 +185,15 @@
                 </div><!-- mapTopBack end -->
                 <div class="mapFront">
                     <div class="storeList">
-                        <div class="storeItem">
+                        <div class="loading">
+                            <img src="assets/images/loading.gif" alt="로딩 gif 이미지">
+                        </div>
+                        <!-- <div class="storeItem">
                             <p class="storeThumb"><img src="assets/images/store/tenoclock/img_thumb.jpg" alt=""></p>
                             <p class="storeName">10 o’ clock</p>
                             <p class="storeBenefit">1,000원당 100원 할인</p>
                             <button type="button" class="btnStoreView" onclick="setTimeout(function(){location.href='#';}, 500);">자세히보기</button>
-                        </div>
+                        </div> -->
                         
                     </div><!-- storeList end -->
                 </div><!-- mapFront end -->
